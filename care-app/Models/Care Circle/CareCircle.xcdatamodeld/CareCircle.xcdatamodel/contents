@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.11" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CareCircle" representedClassName="CareCircle" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="membership" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CareCircleMembership" inverseName="circles" inverseEntity="CareCircleMembership" syncable="YES"/>
+    </entity>
+    <entity name="CareCircleMember" representedClassName="CareCircleMember" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="type" attributeType="String" syncable="YES"/>
+        <relationship name="membership" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CareCircleMembership" inverseName="members" inverseEntity="CareCircleMembership" syncable="YES"/>
+    </entity>
+    <entity name="CareCircleMembership" representedClassName="CareCircleMembership" syncable="YES" codeGenerationType="class">
+        <attribute name="circleId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="circles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CareCircle" inverseName="membership" inverseEntity="CareCircle" syncable="YES"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CareCircleMember" inverseName="membership" inverseEntity="CareCircleMember" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CareCircle" positionX="218.1953125" positionY="173.80078125" width="128" height="90"/>
+        <element name="CareCircleMember" positionX="-181.22265625" positionY="143.90234375" width="128" height="120"/>
+        <element name="CareCircleMembership" positionX="16.12109375" positionY="25.828125" width="128" height="105"/>
+    </elements>
+</model>
