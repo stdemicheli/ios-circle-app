@@ -108,7 +108,7 @@ class CareRecipientTableViewController: UITableViewController, NSFetchedResultsC
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             
             detailVC.careCircleController = careCircleController
-            detailVC.careCircleMember = fetchedResultsController.object(at: indexPath)
+            detailVC.member = fetchedResultsController.object(at: indexPath)
             
         }
     }
@@ -117,8 +117,8 @@ class CareRecipientTableViewController: UITableViewController, NSFetchedResultsC
     
     let careCircleController = CareCircleController()
     
-    lazy var fetchedResultsController: NSFetchedResultsController<CareCircleMember> = {
-        let fetchRequest: NSFetchRequest<CareCircleMember> = CareCircleMember.fetchRequest()
+    lazy var fetchedResultsController: NSFetchedResultsController<Member> = {
+        let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
         let sortDescriptors = [NSSortDescriptor(key: "type", ascending: false), NSSortDescriptor(key: "name", ascending: false)]
         fetchRequest.sortDescriptors = sortDescriptors
         

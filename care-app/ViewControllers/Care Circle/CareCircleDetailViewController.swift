@@ -24,9 +24,9 @@ class CareCircleDetailViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     private func updateViews() {
-        guard let careCircleMember = careCircleMember else { return }
-        nameTextLabel?.text = careCircleMember.name
-        cityTextLabel?.text = careCircleMember.city
+        guard let member = member else { return }
+        nameTextLabel?.text = member.name
+        cityTextLabel?.text = member.city
         configureProfileImage()
         
     }
@@ -65,7 +65,7 @@ class CareCircleDetailViewController: UIViewController, UITableViewDelegate, UIT
     // MARK: - Properties
     
     var careCircleController: CareCircleController?
-    var careCircleMember: CareCircleMember? {
+    var member: Member? {
         didSet {
             updateViews()
         }

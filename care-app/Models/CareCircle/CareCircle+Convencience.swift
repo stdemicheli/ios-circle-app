@@ -1,5 +1,5 @@
 //
-//  CareCircleMember+Convenience.swift
+//  CareCircle+Convencience.swift
 //  care-app
 //
 //  Created by De MicheliStefano on 16.08.18.
@@ -9,16 +9,15 @@
 import Foundation
 import CoreData
 
-extension CareCircleMember {
+extension CareCircle {
     
-    convenience init(id: String = UUID().uuidString, name: String, city: String, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init(id: String = UUID().uuidString, name: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         self.id = id
         self.name = name
-        self.city = city
-        self.type = type
         
     }
     
 }
+
