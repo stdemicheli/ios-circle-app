@@ -10,9 +10,15 @@ import Foundation
 
 struct Utils {
     
-    func transformDateToString(_ date: Date) -> String {
+    func transformDateToDateString(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US")
+        return dateFormatter.string(from: date)
+    }
+    
+    func transformDateToString(_ date: Date, with format: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
         return dateFormatter.string(from: date)
     }
     

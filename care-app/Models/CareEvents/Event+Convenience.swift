@@ -19,7 +19,7 @@ extension Event {
         self.descr = description
         self.startDate = startDate
         self.endDate = endDate
-        self.sectionId = Utils().transformDateToString(startDate)
+        self.sectionId = Utils().transformDateToDateString(startDate)
         
     }
     

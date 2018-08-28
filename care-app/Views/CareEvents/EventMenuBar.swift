@@ -6,4 +6,18 @@
 //  Copyright © 2018 De MicheliStefano. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class EventMenuBar: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = UIColor.blue
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}

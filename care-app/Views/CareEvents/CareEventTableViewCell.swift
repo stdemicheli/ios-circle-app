@@ -10,15 +10,25 @@ import UIKit
 
 class CareEventTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Properties
+    
+    var event: Event? {
+        didSet {
+            updateViews()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scheduledVisitLabel: UILabel!
+    @IBOutlet weak var tasksLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
+    
+    private func updateViews() {
+        nameLabel?.text = event?.name
+        if let date = event?.startDate {
+            scheduledVisitLabel?.text = Utils().transformDateToString(date, with: "dd-MMM-yyyy")
+        }
     }
-
+    
 }
