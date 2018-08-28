@@ -11,13 +11,14 @@ import CoreData
 
 extension Member {
     
-    convenience init(id: String = UUID().uuidString, name: String, city: String, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init(id: String = UUID().uuidString, name: String, city: String, type: String, avatar: Data? = nil, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         self.id = id
         self.name = name
         self.city = city
         self.type = type
+        self.avatar = avatar
         
     }
     

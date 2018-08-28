@@ -11,11 +11,12 @@ import CoreData
 
 extension CareCircle {
     
-    convenience init(id: String = UUID().uuidString, name: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init(id: String = UUID().uuidString, name: String, avatar: Data?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         self.id = id
         self.name = name
+        self.avatar = avatar
         
     }
     

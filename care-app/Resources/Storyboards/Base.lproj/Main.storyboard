@@ -182,7 +182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6EV-O4-flD">
-                                <rect key="frame" x="16" y="80" width="343" height="174"/>
+                                <rect key="frame" x="16" y="80" width="343" height="184"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nad-jv-nC8">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -213,7 +213,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blk-J0-fqa">
-                                        <rect key="frame" x="0.0" y="144" width="343" height="30"/>
+                                        <rect key="frame" x="0.0" y="144" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="S4m-mH-svh"/>
                                         </constraints>
@@ -229,7 +229,6 @@
                         <constraints>
                             <constraint firstItem="6EV-O4-flD" firstAttribute="top" secondItem="BsD-v2-BR9" secondAttribute="top" constant="16" id="MyR-ky-SQn"/>
                             <constraint firstItem="6EV-O4-flD" firstAttribute="leading" secondItem="BsD-v2-BR9" secondAttribute="leading" constant="16" id="epE-Mo-wRf"/>
-                            <constraint firstItem="BsD-v2-BR9" firstAttribute="bottom" secondItem="6EV-O4-flD" secondAttribute="bottom" constant="16" id="fiM-O8-qcV"/>
                             <constraint firstItem="BsD-v2-BR9" firstAttribute="trailing" secondItem="6EV-O4-flD" secondAttribute="trailing" constant="16" id="ssQ-JD-4oZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BsD-v2-BR9"/>
