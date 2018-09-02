@@ -9,6 +9,14 @@
 import UIKit
 
 class AddCareCircleViewController: UIViewController {
+    
+    // MARK: - Properties
+    var careCircleController: CareCircleController?
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var circleTypeTextField: UITextField!
+    @IBOutlet weak var pickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +39,6 @@ class AddCareCircleViewController: UIViewController {
         
         performSegueToReturnBack()
     }
-
-    // MARK: - Properties
-    var careCircleController: CareCircleController?
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var circleTypeTextField: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
     
 }
 

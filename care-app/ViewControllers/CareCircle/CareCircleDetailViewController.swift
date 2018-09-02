@@ -10,7 +10,19 @@ import UIKit
 
 let profileSections = ["Description", "Diagnosis", "Treatment"]
 
-class CareCircleDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CareCircleDetailViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    var careCircleController: CareCircleController?
+    var member: Member? {
+        didSet {
+            updateViews()
+        }
+    }
+    
+    var tableView: UITableView!
+    var profileHeaderView: ProfileHeaderView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,38 +31,47 @@ class CareCircleDetailViewController: UIViewController, UITableViewDelegate, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        updateViews()
     }
     
     private func updateViews() {
-        guard let member = member else { return }
-        nameTextLabel?.text = member.name
-        cityTextLabel?.text = member.city
-        configureProfileImage()
-        
+        setupProfileHeader()
+        setupProfileTableView()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profileSections.count
+    private func setupProfileHeader() {
+        profileHeaderView = ProfileHeaderView(frame: CGRect.zero,
+                                              name: member?.name ?? "",
+                                              subtitle: member?.city ?? "",
+                                              image: UIImage(named: "profile")!)
+        profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(profileHeaderView)
+        
+        let constraints: [NSLayoutConstraint] = [
+            profileHeaderView.topAnchor.constraint(equalTo: view.bottomAnchor),
+            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileHeaderView.heightAnchor.constraint(equalToConstant: 100.0)
+            ]
+        NSLayoutConstraint.activate(constraints)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileSectionCell", for: indexPath)
+    private func setupProfileTableView() {
+        tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
         
-        cell.textLabel?.text = profileSections[indexPath.row]
+        let constraints: [NSLayoutConstraint] = [
+            tableView.topAnchor.constraint(equalTo: profileHeaderView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ]
+        NSLayoutConstraint.activate(constraints)
         
-        return cell
-    }
-    
-    private func configureProfileImage() {
-        if let profileImageView = profileImageView {
-            profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
-            profileImageView.layer.masksToBounds = true
-            profileImageView.layer.borderColor = UIColor.blue.cgColor
-            profileImageView.layer.borderWidth = 4
-            profileImageView.image = UIImage(named: "profile")
-        }
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MemberCell")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     /*
@@ -62,19 +83,21 @@ class CareCircleDetailViewController: UIViewController, UITableViewDelegate, UIT
         // Pass the selected object to the new view controller.
     }
     */
-    // MARK: - Properties
+
+}
+
+extension CareCircleDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
-    var careCircleController: CareCircleController?
-    var member: Member? {
-        didSet {
-            updateViews()
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profileSections.count
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameTextLabel: UILabel!
-    @IBOutlet weak var cityTextLabel: UILabel!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath)
+        
+        cell.textLabel?.text = profileSections[indexPath.row]
+        
+        return cell
+    }
     
-
 }

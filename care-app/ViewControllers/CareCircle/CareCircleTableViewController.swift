@@ -11,6 +11,26 @@ import CoreData
 
 class CareRecipientTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+    // MARK: - Properties
+    
+    let careCircleController = CareCircleController()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Member> = {
+        let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
+        let sortDescriptors = [NSSortDescriptor(key: "type", ascending: false), NSSortDescriptor(key: "name", ascending: false)]
+        fetchRequest.sortDescriptors = sortDescriptors
+        
+        let moc = CoreDataStack.shared.mainContext
+        
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: "type",
+                                             cacheName: nil)
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+    }()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -19,6 +39,8 @@ class CareRecipientTableViewController: UITableViewController, NSFetchedResultsC
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // NSFetchedResultsController
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
@@ -112,25 +134,5 @@ class CareRecipientTableViewController: UITableViewController, NSFetchedResultsC
             
         }
     }
-
-    // MARK: - Properties
-    
-    let careCircleController = CareCircleController()
-    
-    lazy var fetchedResultsController: NSFetchedResultsController<Member> = {
-        let fetchRequest: NSFetchRequest<Member> = Member.fetchRequest()
-        let sortDescriptors = [NSSortDescriptor(key: "type", ascending: false), NSSortDescriptor(key: "name", ascending: false)]
-        fetchRequest.sortDescriptors = sortDescriptors
-        
-        let moc = CoreDataStack.shared.mainContext
-        
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                             managedObjectContext: moc,
-                                             sectionNameKeyPath: "type",
-                                             cacheName: nil)
-        frc.delegate = self
-        try! frc.performFetch()
-        return frc
-    }()
 
 }

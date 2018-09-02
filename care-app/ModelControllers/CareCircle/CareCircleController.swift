@@ -12,6 +12,7 @@ import CoreData
 class CareCircleController {
     
     // MARK: - Properties
+    
     enum CareCircleMemberTypes: String, CaseIterable {
         case CareRecipient = "Care Recipient"
         case CareGiver = "Care Giver"

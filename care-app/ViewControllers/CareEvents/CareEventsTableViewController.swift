@@ -31,6 +31,12 @@ class CareEventsTableViewController: UITableViewController, NSFetchedResultsCont
         return frc
     }()
     
+    // MARK: - Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     // MARK: - NSFetchedResultsControllerDelegate
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -69,13 +75,6 @@ class CareEventsTableViewController: UITableViewController, NSFetchedResultsCont
             tableView.deleteRows(at: [oldIndexPath], with: .automatic)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
-    }
-    
-    // MARK: - Methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     }
 
     // MARK: - Table view data source
