@@ -21,6 +21,8 @@ class CareCircleDetailViewController: UIViewController {
         }
     }
     
+    var scrollView: UIScrollView!
+    var containerView: UIView!
     var defaultProfileHeaderHeight: CGFloat = 240
     var tableView: UITableView!
     var profileHeaderView: ProfileHeaderView!
@@ -34,8 +36,28 @@ class CareCircleDetailViewController: UIViewController {
     }
     
     private func updateViews() {
+        setupContainerScrollView()
         setupProfileHeader()
         setupProfileTableView()
+    }
+    
+    private func setupContainerScrollView() {
+        scrollView = UIScrollView(frame: self.view.bounds)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(scrollView)
+        
+        let scrollViewConstraints: [NSLayoutConstraint] = [
+            //scrollView.heightAnchor.constraint(equalTo: self.view.heightAnchor),
+            scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            ]
+        NSLayoutConstraint.activate(scrollViewConstraints)
+        
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.delegate = self
+        
     }
     
     private func setupProfileHeader() {
@@ -44,15 +66,15 @@ class CareCircleDetailViewController: UIViewController {
                                               subtitle: member?.city ?? "",
                                               image: UIImage(named: "profile")!)
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(profileHeaderView)
+        scrollView.addSubview(profileHeaderView)
         
         profileHeaderHeightConstraint = profileHeaderView.heightAnchor.constraint(equalToConstant: defaultProfileHeaderHeight)
         profileHeaderHeightConstraint.isActive = true
         
         let constraints: [NSLayoutConstraint] = [
-            profileHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
-            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileHeaderView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            profileHeaderView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            profileHeaderView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -60,19 +82,21 @@ class CareCircleDetailViewController: UIViewController {
     private func setupProfileTableView() {
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(tableView)
+        scrollView.addSubview(tableView)
         
         let constraints: [NSLayoutConstraint] = [
             tableView.topAnchor.constraint(equalTo: profileHeaderView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            tableView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            tableView.heightAnchor.constraint(equalToConstant: 1000),
         ]
         NSLayoutConstraint.activate(constraints)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MemberCell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isScrollEnabled = false
     }
     
     private func animateHeader() {
@@ -115,8 +139,9 @@ extension CareCircleDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
             profileHeaderHeightConstraint.constant += abs(scrollView.contentOffset.y)
+            profileHeaderView.incrementImageAlpha(with: profileHeaderHeightConstraint.constant)
         } else {
-            profileHeaderHeightConstraint.constant -= abs(scrollView.contentOffset.y)
+            profileHeaderHeightConstraint.constant -= abs(scrollView.contentOffset.y) / 100
         }
     }
     

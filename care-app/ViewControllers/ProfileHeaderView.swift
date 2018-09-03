@@ -50,7 +50,7 @@ class ProfileHeaderView: UIView {
         NSLayoutConstraint.activate(containerViewConstraints)
         
         containerView.backgroundColor = .gray
-        containerView.alpha = 0.6
+        //containerView.alpha = 0.6
         
         profileImageView = UIImageView()
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +58,7 @@ class ProfileHeaderView: UIView {
         
         let profileImageConstraints: [NSLayoutConstraint] = [
             profileImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            profileImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            profileImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: -30),
             profileImageView.heightAnchor.constraint(equalToConstant: ComponentDimensions.profileImageSize.rawValue),
             profileImageView.widthAnchor.constraint(equalToConstant: ComponentDimensions.profileImageSize.rawValue)
         ]
