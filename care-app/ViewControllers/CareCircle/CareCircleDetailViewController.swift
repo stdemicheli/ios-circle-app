@@ -21,16 +21,15 @@ class CareCircleDetailViewController: UIViewController {
         }
     }
     
+    var defaultProfileHeaderHeight: CGFloat = 240
     var tableView: UITableView!
     var profileHeaderView: ProfileHeaderView!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateViews()
-    }
+    var profileHeaderHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = .bottom
+        self.extendedLayoutIncludesOpaqueBars = false
         updateViews()
     }
     
@@ -47,11 +46,13 @@ class CareCircleDetailViewController: UIViewController {
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(profileHeaderView)
         
+        profileHeaderHeightConstraint = profileHeaderView.heightAnchor.constraint(equalToConstant: defaultProfileHeaderHeight)
+        profileHeaderHeightConstraint.isActive = true
+        
         let constraints: [NSLayoutConstraint] = [
-            profileHeaderView.topAnchor.constraint(equalTo: view.bottomAnchor),
+            profileHeaderView.topAnchor.constraint(equalTo: view.topAnchor),
             profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            profileHeaderView.heightAnchor.constraint(equalToConstant: 100.0)
             ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -72,6 +73,13 @@ class CareCircleDetailViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "MemberCell")
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func animateHeader() {
+        UIView.animate(withDuration: 0.7, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.profileHeaderHeightConstraint.constant = self.defaultProfileHeaderHeight
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     /*
@@ -98,6 +106,30 @@ extension CareCircleDetailViewController: UITableViewDelegate, UITableViewDataSo
         cell.textLabel?.text = profileSections[indexPath.row]
         
         return cell
+    }
+    
+}
+
+extension CareCircleDetailViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 0 {
+            profileHeaderHeightConstraint.constant += abs(scrollView.contentOffset.y)
+        } else {
+            profileHeaderHeightConstraint.constant -= abs(scrollView.contentOffset.y)
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if profileHeaderHeightConstraint.constant > defaultProfileHeaderHeight {
+            animateHeader()
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if profileHeaderHeightConstraint.constant > defaultProfileHeaderHeight {
+            animateHeader()
+        }
     }
     
 }
