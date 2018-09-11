@@ -32,6 +32,7 @@ class CareCircleDetailViewController: UIViewController {
         super.viewDidLoad()
         self.edgesForExtendedLayout = .bottom
         self.extendedLayoutIncludesOpaqueBars = false
+        
         updateViews()
     }
     
@@ -52,7 +53,7 @@ class CareCircleDetailViewController: UIViewController {
             scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            ]
+        ]
         NSLayoutConstraint.activate(scrollViewConstraints)
         
         scrollView.showsVerticalScrollIndicator = false
@@ -75,7 +76,7 @@ class CareCircleDetailViewController: UIViewController {
             profileHeaderView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             profileHeaderView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             profileHeaderView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            ]
+        ]
         NSLayoutConstraint.activate(constraints)
     }
     
@@ -126,7 +127,7 @@ extension CareCircleDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell", for: indexPath)
-        
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = profileSections[indexPath.row]
         
         return cell
@@ -138,7 +139,7 @@ extension CareCircleDetailViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y < 0 {
-            profileHeaderHeightConstraint.constant += abs(scrollView.contentOffset.y)
+            profileHeaderHeightConstraint.constant += abs(scrollView.contentOffset.y) / 2
             profileHeaderView.incrementImageAlpha(with: profileHeaderHeightConstraint.constant)
         } else {
             profileHeaderHeightConstraint.constant -= abs(scrollView.contentOffset.y) / 100

@@ -80,16 +80,58 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Visits" id="ybS-Gj-3wy">
                         <barButtonItem key="leftBarButtonItem" title="Calendar" id="Zhg-jA-hvN"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5NH-XP-ePk">
-                            <connections>
-                                <segue destination="vpG-GI-Ody" kind="presentation" identifier="ShowAddEventModal" id="vdW-ag-Fsd"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="5NH-XP-ePk">
+                                <connections>
+                                    <segue destination="vpG-GI-Ody" kind="presentation" identifier="ShowAddEventModal" id="vdW-ag-Fsd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="test" id="Bm2-Zg-Vyx">
+                                <connections>
+                                    <segue destination="PMa-r9-Wsx" kind="presentation" id="mhT-2q-rIc"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wA-SL-ACl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="497" y="124"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="Bfy-LW-Uha">
+            <objects>
+                <collectionViewController id="PMa-r9-Wsx" customClass="RAIHCCollectionViewController" customModule="care_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="M6a-lS-nt4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rCB-0N-wSk">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nx2-1K-9gC" customClass="OrdinalScaleCollectionViewCell" customModule="care_app" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="PMa-r9-Wsx" id="fZU-ey-yL1"/>
+                            <outlet property="delegate" destination="PMa-r9-Wsx" id="BHf-OP-UFh"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="sS1-EK-vqw"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyT-vS-KYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yGc-kl-rgJ">
@@ -100,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7XD-4A-7VZ" kind="relationship" relationship="rootViewController" id="eH1-pj-QsB"/>
+                        <segue destination="7XD-4A-7VZ" kind="relationship" relationship="rootViewController" id="Qyd-Bt-YTL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLa-Y0-BAX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,7 +152,7 @@
         <!--Add a new event-->
         <scene sceneID="fLu-3f-Vrd">
             <objects>
-                <viewController id="vpG-GI-Ody" sceneMemberID="viewController">
+                <viewController id="vpG-GI-Ody" customClass="AddEventViewController" customModule="care_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rpG-uD-Ttv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +204,7 @@
                                         </constraints>
                                         <state key="normal" title="Submit"/>
                                         <connections>
+                                            <action selector="save:" destination="vpG-GI-Ody" eventType="touchUpInside" id="eha-mN-qpk"/>
                                             <action selector="submit:" destination="vpG-GI-Ody" eventType="touchUpInside" id="rEz-0u-5IT"/>
                                         </connections>
                                     </button>
@@ -185,9 +228,12 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="careReceiverTextField" destination="KNG-kh-cAt" id="HlC-Q8-FUK"/>
                         <outlet property="circleTypeTextField" destination="G02-2C-Blr" id="NkK-l6-m3L"/>
                         <outlet property="cityTextField" destination="cdJ-mV-B7a" id="grI-5z-Cnt"/>
-                        <outlet property="nameTextField" destination="9Qg-Iq-lwO" id="bEa-K6-sul"/>
+                        <outlet property="endDateTextField" destination="G02-2C-Blr" id="qag-DW-ZTZ"/>
+                        <outlet property="nameTextField" destination="9Qg-Iq-lwO" id="8T8-Wq-klw"/>
+                        <outlet property="startDateTextField" destination="cdJ-mV-B7a" id="vLg-ob-tpC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DhR-Q6-9C8" userLabel="First Responder" sceneMemberID="firstResponder"/>
