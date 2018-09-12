@@ -26,7 +26,11 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     }
     
     var delegate: RAIHCCollectionViewController?
-    var questionTextLabel: UILabel!
+    
+    
+    private var questionTextLabel: UILabel!
+    
+    var questionView: UIView!
     var answerView: UIView!
     
     var footerView: UIView!
@@ -72,29 +76,34 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     // - MARK: - Private methods
     
     func setupBodyView() {
-        questionTextLabel = UILabel()
         answerView = UIView()
-        questionTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionView = UIView()
+        questionTextLabel = UILabel()
         answerView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(questionTextLabel)
+        questionView.translatesAutoresizingMaskIntoConstraints = false
+        questionTextLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(answerView)
+        contentView.addSubview(questionView)
+        questionView.addSubview(questionTextLabel)
         
         let constraints: [NSLayoutConstraint] = [
-            questionTextLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2),
-            questionTextLabel.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
-            questionTextLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            questionTextLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            answerView.topAnchor.constraint(equalTo: questionTextLabel.bottomAnchor, constant: 20),
+            questionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2),
+            questionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
+            questionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            questionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            answerView.topAnchor.constraint(equalTo: questionView.bottomAnchor, constant: 20),
             answerView.bottomAnchor.constraint(equalTo: footerView.topAnchor, constant: -20),
             answerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             answerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            questionTextLabel.centerXAnchor.constraint(equalTo: questionView.centerXAnchor),
+            questionTextLabel.centerYAnchor.constraint(equalTo: questionView.centerYAnchor),
             ]
         NSLayoutConstraint.activate(constraints)
         
         questionTextLabel.text = "Question"
         questionTextLabel.textAlignment = .center
-        questionTextLabel.backgroundColor = .white
         
+        questionView.backgroundColor = .white
         answerView.backgroundColor = .white
         
     }

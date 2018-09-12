@@ -15,14 +15,11 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView!.register(RAIAssessmentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.isPagingEnabled = true
         self.collectionView.showsHorizontalScrollIndicator = false
-        
     }
 
-    
     // MARK: RAIAssessmentCollectionViewCellProtocol
     
     func openMenu() {
@@ -54,25 +51,6 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // Do a switch statement based on the type of the question
-        // set collectionviewcell and reuseidentifier
-        // let collectionViewCell = OrdinalScaleCollectionViewCell
-        
-//        let assessmentComponent = assessment[indexPath.item]
-//
-//        switch assessmentComponent.type {
-//        case "ordinal-scale-cell":
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ordinal-scale-cell", for: indexPath) as! OrdinalScaleCollectionViewCell
-//            cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
-//            return cell
-//
-//        default:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ordinal-scale-cell", for: indexPath) as! OrdinalScaleCollectionViewCell
-//            cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
-//            return cell
-//        }
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RAIAssessmentCollectionViewCell
         cell.delegate = self
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
