@@ -8,19 +8,40 @@
 
 import UIKit
 
-private let reuseIdentifier = "AssessmentCell"
+private let reuseIdentifier = "RAIAssessmentCell"
 let assessment: [String: String] = ["type": "ordinal-scale-cell"]
 
-class RAIHCCollectionViewController: UICollectionViewController {
-
+class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCollectionViewCellDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView!.register(OrdinalScaleCollectionViewCell.self, forCellWithReuseIdentifier: "ordinal-scale-cell")
+        self.collectionView!.register(RAIAssessmentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.isPagingEnabled = true
         self.collectionView.showsHorizontalScrollIndicator = false
+        
     }
 
+    
+    // MARK: RAIAssessmentCollectionViewCellProtocol
+    
+    func openMenu() {
+        
+    }
+    
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func next() {
+        
+    }
+    
+    func previous() {
+        
+    }
+    
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -52,7 +73,8 @@ class RAIHCCollectionViewController: UICollectionViewController {
 //            return cell
 //        }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ordinal-scale-cell", for: indexPath) as! OrdinalScaleCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RAIAssessmentCollectionViewCell
+        cell.delegate = self
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
         return cell
     }

@@ -1,14 +1,21 @@
 //
-//  OrdinalScaleCollectionViewCell.swift
+//  RAIAssessmentCollectionViewCell.swift
 //  care-app
 //
-//  Created by De MicheliStefano on 11.09.18.
+//  Created by De MicheliStefano on 12.09.18.
 //  Copyright © 2018 De MicheliStefano. All rights reserved.
 //
 
 import UIKit
 
-class OrdinalScaleCollectionViewCell: UICollectionViewCell {
+protocol RAIAssessmentCollectionViewCellDelegate {
+    func openMenu()
+    func dismiss()
+    func next()
+    func previous()
+}
+
+class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     
     // - MARK: - Properties
     
@@ -18,6 +25,7 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    var delegate: RAIHCCollectionViewController?
     var questionTextLabel: UILabel!
     var answerView: UIView!
     
@@ -43,6 +51,24 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // - MARK: - Delegate methods
+    
+    @objc func openMenu() {
+        delegate?.openMenu()
+    }
+    
+    @objc func dismiss() {
+        delegate?.dismiss()
+    }
+    
+    @objc func nextQ() {
+        delegate?.next()
+    }
+    
+    @objc func previousQ() {
+        delegate?.previous()
+    }
+    
     // - MARK: - Private methods
     
     func setupBodyView() {
@@ -62,7 +88,7 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
             answerView.bottomAnchor.constraint(equalTo: footerView.topAnchor, constant: -20),
             answerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             answerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-        ]
+            ]
         NSLayoutConstraint.activate(constraints)
         
         questionTextLabel.text = "Question"
@@ -95,8 +121,8 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
         stackView.alignment = .center
         headerView.addSubview(stackView)
         
-        menuButton = UIButton()
-        dismissButton = UIButton()
+        menuButton = UIButton(type: .system)
+        dismissButton = UIButton(type: .system)
         
         menuButton.translatesAutoresizingMaskIntoConstraints = false
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
@@ -108,14 +134,16 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
             stackView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
-        ]
+            ]
         NSLayoutConstraint.activate(stackViewConstraints)
         
         menuButton.setTitle("Menu", for: .normal)
         menuButton.backgroundColor = .purple
+        menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
         
         dismissButton.setTitle("Close", for: .normal)
         dismissButton.backgroundColor = .gray
+        dismissButton.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
         
     }
     
@@ -129,7 +157,7 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
             footerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             footerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             footerView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1.0 / 10.0),
-        ]
+            ]
         NSLayoutConstraint.activate(footerConstraints)
         
         footerView.backgroundColor = .blue
@@ -141,8 +169,8 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
         stackView.alignment = .center
         footerView.addSubview(stackView)
         
-        nextButton = UIButton()
-        prevButton = UIButton()
+        nextButton = UIButton(type: .system)
+        prevButton = UIButton(type: .system)
         progressTextLabel = UILabel()
         
         nextButton.translatesAutoresizingMaskIntoConstraints = false
@@ -151,7 +179,7 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(prevButton)
         stackView.addArrangedSubview(progressTextLabel)
         stackView.addArrangedSubview(nextButton)
-
+        
         let stackViewConstraints: [NSLayoutConstraint] = [
             stackView.topAnchor.constraint(equalTo: footerView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: footerView.bottomAnchor),
@@ -162,9 +190,11 @@ class OrdinalScaleCollectionViewCell: UICollectionViewCell {
         
         nextButton.setTitle("NEXT", for: .normal)
         nextButton.backgroundColor = .purple
+        nextButton.addTarget(self, action: #selector(nextQ), for: .touchUpInside)
         
         prevButton.setTitle("PREV", for: .normal)
         prevButton.backgroundColor = .gray
+        prevButton.addTarget(self, action: #selector(previousQ), for: .touchUpInside)
         
         progressTextLabel.text = "1 of 123435"
         progressTextLabel.backgroundColor = .green
