@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.11" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="18A389" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,12 +37,12 @@
     <entity name="Question" representedClassName="Question" syncable="YES" codeGenerationType="class">
         <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="number" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="responseType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sectionId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sectionName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="subtitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="assessment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Assessment" inverseName="questions" inverseEntity="Assessment" syncable="YES"/>
         <relationship name="responses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Response" inverseName="question" inverseEntity="Response" syncable="YES"/>
     </entity>
@@ -54,11 +54,11 @@
         <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="responses" inverseEntity="Question" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Assessment" positionX="-31.375" positionY="377.5703125" width="128" height="118"/>
         <element name="CareCircle" positionX="28.2734375" positionY="-97.94921875" width="128" height="120"/>
         <element name="Event" positionX="438.8671875" positionY="-73.34765625" width="128" height="165"/>
         <element name="Member" positionX="-221.4609375" positionY="88.42578125" width="128" height="163"/>
-        <element name="Assessment" positionX="-31.375" positionY="377.5703125" width="128" height="118"/>
-        <element name="Question" positionX="-27.25390625" positionY="535.1796875" width="128" height="193"/>
+        <element name="Question" positionX="-27.25390625" positionY="535.1796875" width="128" height="195"/>
         <element name="Response" positionX="-31.95703125" positionY="792.02734375" width="128" height="120"/>
     </elements>
 </model>

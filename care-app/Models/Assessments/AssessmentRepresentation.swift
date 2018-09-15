@@ -26,25 +26,25 @@ struct AssessmentRepresentation: Codable {
 
 struct QuestionRepresentation: Codable {
     
-    var id: String
-    var type: String
+    var id: Int
     var sectionId: String
     var sectionName: String
-    var number: Int16
+    var number: String
     var title: String
     var subtitle: String
     var descript: String
-    var responses: [ResponseRepresentation]
+    var responseType: String
+    var responses: [ResponseRepresentation]?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case type
         case sectionId
         case sectionName
         case number
         case title
-        case subtitle = "subTitle"
-        case descript
+        case subtitle
+        case descript = "description"
+        case responseType
         case responses
     }
     
@@ -52,7 +52,7 @@ struct QuestionRepresentation: Codable {
 
 struct ResponseRepresentation: Codable {
     
-    var id: String
+    var id: Int
     var title: String
     var descript: String
     var checked: Bool
@@ -60,7 +60,7 @@ struct ResponseRepresentation: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case title
-        case descript
+        case descript = "description"
         case checked
     }
     
