@@ -90,6 +90,10 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         
         let question = frc.fetchedObjects?[indexPath.section].questions?[indexPath.item] as! Question
         cell.question = question
+        
+        cell.currentQuestionIndex = indexPath.item + 1
+        cell.totalQuestionsCount = frc.fetchedObjects?[indexPath.section].questions?.count ?? 0
+        
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
         return cell
     }

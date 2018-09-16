@@ -78,19 +78,19 @@ extension Question {
 
 extension Response {
     
-    convenience init(id: String, title: String, descript: String, checked: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init(id: String, title: String, descript: String, isSelected: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.id = id
         self.title = title
         self.descript = descript
-        self.checked = checked
+        self.isSelected = isSelected
     }
     
     convenience init?(_ responseRepresentation: ResponseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(id: String(responseRepresentation.id),
                   title: responseRepresentation.title,
                   descript: responseRepresentation.descript,
-                  checked: responseRepresentation.checked,
+                  isSelected: responseRepresentation.isSelected,
                   context: context)
     }
     

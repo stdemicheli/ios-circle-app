@@ -19,36 +19,51 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     
     // - MARK: - Properties
     
-    var assessment: String? {
+    var question: Question? {
         didSet {
-            setupBodyView()
+            setupViews()
         }
     }
     
-    var delegate: RAIHCCollectionViewController?
+    var totalQuestionsCount: Int? {
+        didSet {
+            setupFooterView()
+        }
+    }
     
+    var currentQuestionIndex: Int? {
+        didSet {
+            setupFooterView()
+        }
+    }
     
-    private var questionTextLabel: UILabel!
+    var responses: NSOrderedSet? {
+        return question?.responses
+    }
     
-    var questionView: UIView!
-    var answerView: UIView!
+    var delegate: RAIAssessmentCollectionViewCellDelegate?
     
-    var footerView: UIView!
+    private var questionView: UIView!
+    private var questionTitleTextLabel: UILabel!
+    private var questionSubtitleTextLabel: UILabel!
+    
+    private var answerView: UIView!
+    
+    private var footerView: UIView!
     private var nextButton: UIButton!
     private var prevButton: UIButton!
     private var progressTextLabel: UILabel!
     
-    var headerView: UIView!
+    private var headerView: UIView!
     private var menuButton: UIButton!
+    private var headerTitle: UILabel!
     private var dismissButton: UIButton!
     
     // - MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupHeaderView()
-        setupFooterView()
-        setupBodyView()
+        setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,16 +90,34 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     
     // - MARK: - Private methods
     
+    func setupViews() {
+        setupHeaderView()
+        setupFooterView()
+        setupBodyView()
+    }
+    
     func setupBodyView() {
-        answerView = UIView()
         questionView = UIView()
-        questionTextLabel = UILabel()
-        answerView.translatesAutoresizingMaskIntoConstraints = false
+        let questionStackView = UIStackView()
+        questionTitleTextLabel = UILabel()
+        questionSubtitleTextLabel = UILabel()
+        answerView = UIView()
+        let answerStackView = UIStackView()
+        
+        
         questionView.translatesAutoresizingMaskIntoConstraints = false
-        questionTextLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(answerView)
+        questionStackView.translatesAutoresizingMaskIntoConstraints = false
+        questionTitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionSubtitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        answerView.translatesAutoresizingMaskIntoConstraints = false
+        answerStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         contentView.addSubview(questionView)
-        questionView.addSubview(questionTextLabel)
+        questionView.addSubview(questionStackView)
+        questionStackView.addArrangedSubview(questionTitleTextLabel)
+        questionStackView.addArrangedSubview(questionSubtitleTextLabel)
+        contentView.addSubview(answerView)
+        answerView.addSubview(answerStackView)
         
         let constraints: [NSLayoutConstraint] = [
             questionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2),
@@ -95,17 +128,38 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
             answerView.bottomAnchor.constraint(equalTo: footerView.topAnchor, constant: -20),
             answerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             answerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            questionTextLabel.centerXAnchor.constraint(equalTo: questionView.centerXAnchor),
-            questionTextLabel.centerYAnchor.constraint(equalTo: questionView.centerYAnchor),
+            questionStackView.topAnchor.constraint(equalTo: questionView.topAnchor, constant: 8),
+            questionStackView.leadingAnchor.constraint(equalTo: questionView.leadingAnchor, constant: 8),
+            questionStackView.trailingAnchor.constraint(equalTo: questionView.trailingAnchor, constant: -8),
+            questionStackView.bottomAnchor.constraint(equalTo: questionView.bottomAnchor, constant: -8),
+            answerStackView.topAnchor.constraint(equalTo: answerView.topAnchor, constant: 8),
+            answerStackView.leadingAnchor.constraint(equalTo: answerView.leadingAnchor, constant: 8),
+            answerStackView.trailingAnchor.constraint(equalTo: answerView.trailingAnchor, constant: -8),
+            answerStackView.bottomAnchor.constraint(equalTo: answerView.bottomAnchor, constant: -8),
             ]
         NSLayoutConstraint.activate(constraints)
         
-        questionTextLabel.text = "Question"
-        questionTextLabel.textAlignment = .center
-        
         questionView.backgroundColor = .white
+        
+        questionStackView.axis = .vertical
+        questionStackView.distribution = .fillProportionally
+        questionStackView.alignment = .center
+        
+        questionTitleTextLabel.text = question?.title
+        questionTitleTextLabel.textAlignment = .center
+        questionTitleTextLabel.numberOfLines = 0
+        questionTitleTextLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+        
+        questionSubtitleTextLabel.text = question?.subtitle
+        questionSubtitleTextLabel.textAlignment = .center
+        questionSubtitleTextLabel.numberOfLines = 0
+        questionSubtitleTextLabel.font = UIFont.systemFont(ofSize: 16.0)
+        
         answerView.backgroundColor = .white
         
+        answerStackView.axis = .vertical
+        answerStackView.distribution = .fillProportionally
+        answerStackView.alignment = .center
     }
     
     func setupHeaderView() {
@@ -131,11 +185,14 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         headerView.addSubview(stackView)
         
         menuButton = UIButton(type: .system)
+        headerTitle = UILabel()
         dismissButton = UIButton(type: .system)
         
         menuButton.translatesAutoresizingMaskIntoConstraints = false
+        headerTitle.translatesAutoresizingMaskIntoConstraints = false
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(menuButton)
+        stackView.addArrangedSubview(headerTitle)
         stackView.addArrangedSubview(dismissButton)
         
         let stackViewConstraints: [NSLayoutConstraint] = [
@@ -149,6 +206,11 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         menuButton.setTitle("Menu", for: .normal)
         menuButton.backgroundColor = .purple
         menuButton.addTarget(self, action: #selector(openMenu), for: .touchUpInside)
+        
+        headerTitle.numberOfLines = 1
+        headerTitle.textAlignment = .center
+        headerTitle.text = question?.sectionName
+        headerTitle.backgroundColor = .green
         
         dismissButton.setTitle("Close", for: .normal)
         dismissButton.backgroundColor = .gray
@@ -205,9 +267,12 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         prevButton.backgroundColor = .gray
         prevButton.addTarget(self, action: #selector(previousQ), for: .touchUpInside)
         
-        progressTextLabel.text = "1 of 123435"
+        if let totalQuestionsCount = totalQuestionsCount, let currentQuestionIndex = currentQuestionIndex {
+            progressTextLabel.text = "\(currentQuestionIndex) of \(totalQuestionsCount)"
+        }
         progressTextLabel.backgroundColor = .green
         
     }
     
 }
+

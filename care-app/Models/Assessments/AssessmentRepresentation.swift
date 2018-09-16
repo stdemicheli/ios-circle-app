@@ -55,13 +55,13 @@ struct ResponseRepresentation: Codable, Hashable {
     var id: Int
     var title: String
     var descript: String
-    var checked: Bool
+    var isSelected: Bool
     
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case descript = "description"
-        case checked
+        case isSelected
     }
     
 }

@@ -13,10 +13,10 @@
             "description": "E.g. fear of being abandoned, being let alone, being with others, intense fear of specific objects or situations",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -29,13 +29,13 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "First assessment", "description": "", "checked": false},
-                {"id": 2, "title": "Routine assessment", "description": "", "checked": false},
-                {"id": 3, "title": "Return assessment", "description": "", "checked": false},
-                {"id": 4, "title": "Significant change in status reassessment", "description": "", "checked": false},
-                {"id": 5, "title": "Discharge assessment, covers last 3 days of service", "description": "", "checked": false},
-                {"id": 6, "title": "Discharge tracking only", "description": "", "checked": false},
-                {"id": 7, "title": "Other", "description": "E.g. research", "checked": false}
+                {"id": 1, "title": "First assessment", "description": "", "isSelected": false},
+                {"id": 2, "title": "Routine assessment", "description": "", "isSelected": false},
+                {"id": 3, "title": "Return assessment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Significant change in status reassessment", "description": "", "isSelected": false},
+                {"id": 5, "title": "Discharge assessment, covers last 3 days of service", "description": "", "isSelected": false},
+                {"id": 6, "title": "Discharge tracking only", "description": "", "isSelected": false},
+                {"id": 7, "title": "Other", "description": "E.g. research", "isSelected": false}
             ]
         },
         {
@@ -79,20 +79,20 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Private home / apartment / rented room", "description": "", "checked": false},
-                {"id": 2, "title": "Board and care", "description": "", "checked": false},
-                {"id": 3, "title": "Assisted living or semi-independent living", "description": "", "checked": false},
-                {"id": 4, "title": "Mental health residence", "description": "E.g. psychiatric group home", "checked": false},
-                {"id": 5, "title": "Group home for persons with physical disability", "description": "", "checked":  false},
-                {"id": 6, "title": "Setting for persons with intellectual disability", "description": "", "checked": false},
-                {"id": 7, "title": "Psychiatric hospital or unit", "description": "", "checked": false},
-                {"id": 8, "title": "Homeless (with or without shelter)", "description": "", "checked": false},
-                {"id": 9, "title": "Long-term care facility (nursing home)", "description": "", "checked": false},
-                {"id": 10, "title": "Rehabilitation hospital / unit", "description": "", "checked": false},
-                {"id": 11, "title": "Hospice facility / palliative care unit", "description": "", "checked": false},
-                {"id": 12, "title": "Acute care hospital", "description": "", "checked": false},
-                {"id": 13, "title": "Correctional facility", "description": "", "checked": false},
-                {"id": 14, "title": "Other", "description": "", "checked": false}
+                {"id": 1, "title": "Private home / apartment / rented room", "description": "", "isSelected": false},
+                {"id": 2, "title": "Board and care", "description": "", "isSelected": false},
+                {"id": 3, "title": "Assisted living or semi-independent living", "description": "", "isSelected": false},
+                {"id": 4, "title": "Mental health residence", "description": "E.g. psychiatric group home", "isSelected": false},
+                {"id": 5, "title": "Group home for persons with physical disability", "description": "", "isSelected":  false},
+                {"id": 6, "title": "Setting for persons with intellectual disability", "description": "", "isSelected": false},
+                {"id": 7, "title": "Psychiatric hospital or unit", "description": "", "isSelected": false},
+                {"id": 8, "title": "Homeless (with or without shelter)", "description": "", "isSelected": false},
+                {"id": 9, "title": "Long-term care facility (nursing home)", "description": "", "isSelected": false},
+                {"id": 10, "title": "Rehabilitation hospital / unit", "description": "", "isSelected": false},
+                {"id": 11, "title": "Hospice facility / palliative care unit", "description": "", "isSelected": false},
+                {"id": 12, "title": "Acute care hospital", "description": "", "isSelected": false},
+                {"id": 13, "title": "Correctional facility", "description": "", "isSelected": false},
+                {"id": 14, "title": "Other", "description": "", "isSelected": false}
             ]
         },
         {
@@ -105,14 +105,14 @@
             "description": "",
             "responseType": "multi-option",
             "responses": [
-                {"id": 1, "title": "Alone", "description": "", "checked": false},
-                {"id": 2, "title": "With spouse / partner only", "description": "", "checked": false},
-                {"id": 3, "title": "With spouse / partner and other(s)", "description": "", "checked": false},
-                {"id": 4, "title": "With child (not spouse / partner)", "description": "", "checked": false},
-                {"id": 5, "title": "With parent(s) or guardian(s)", "description": "", "checked": false},
-                {"id": 6, "title": "With sibling(s)", "description": "", "checked": false},
-                {"id": 7, "title": "With other relatives", "description": "", "checked": false},
-                {"id": 7, "title": "With non-relatives(s)", "description": "", "checked": false}
+                {"id": 1, "title": "Alone", "description": "", "isSelected": false},
+                {"id": 2, "title": "With spouse / partner only", "description": "", "isSelected": false},
+                {"id": 3, "title": "With spouse / partner and other(s)", "description": "", "isSelected": false},
+                {"id": 4, "title": "With child (not spouse / partner)", "description": "", "isSelected": false},
+                {"id": 5, "title": "With parent(s) or guardian(s)", "description": "", "isSelected": false},
+                {"id": 6, "title": "With sibling(s)", "description": "", "isSelected": false},
+                {"id": 7, "title": "With other relatives", "description": "", "isSelected": false},
+                {"id": 7, "title": "With non-relatives(s)", "description": "", "isSelected": false}
             ]
         },
         {
@@ -125,8 +125,8 @@
             "description": "E.g. moved in with another person, other moved in",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -139,9 +139,9 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Yes, other community residence", "description": "", "checked": false},
-                {"id": 2, "title": "Yes, institution", "description": "", "checked": false},
-                {"id": 3, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes, other community residence", "description": "", "isSelected": false},
+                {"id": 2, "title": "Yes, institution", "description": "", "isSelected": false},
+                {"id": 3, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -154,12 +154,12 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No hospitalizaiton within 90 days", "description": "", "checked": false},
-                {"id": 2, "title": "31 to 90 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "15 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "8 to 14 days ago", "description": "", "checked": false},
-                {"id": 5, "title": "In the last 7 days", "description": "", "checked": false},
-                {"id": 6, "title": "Now in hospital", "description": "", "checked": false}
+                {"id": 1, "title": "No hospitalizaiton within 90 days", "description": "", "isSelected": false},
+                {"id": 2, "title": "31 to 90 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "15 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "8 to 14 days ago", "description": "", "isSelected": false},
+                {"id": 5, "title": "In the last 7 days", "description": "", "isSelected": false},
+                {"id": 6, "title": "Now in hospital", "description": "", "isSelected": false}
             ]
         },
         {
@@ -182,12 +182,12 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Hispanic or Latino", "description": "", "checked": false},
-                {"id": 2, "title": "American Indian or Alaska Native", "description": "", "checked": false},
-                {"id": 3, "title": "Asian", "description": "", "checked": false},
-                {"id": 4, "title": "Black or African American", "description": "", "checked": false},
-                {"id": 5, "title": "Native Hawaiian or other Pacific Islander", "description": "", "checked": false},
-                {"id": 6, "title": "White", "description": "", "checked": false}
+                {"id": 1, "title": "Hispanic or Latino", "description": "", "isSelected": false},
+                {"id": 2, "title": "American Indian or Alaska Native", "description": "", "isSelected": false},
+                {"id": 3, "title": "Asian", "description": "", "isSelected": false},
+                {"id": 4, "title": "Black or African American", "description": "", "isSelected": false},
+                {"id": 5, "title": "Native Hawaiian or other Pacific Islander", "description": "", "isSelected": false},
+                {"id": 6, "title": "White", "description": "", "isSelected": false}
             ]
         },
         {
@@ -200,10 +200,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "English", "description": "", "checked": false},
-                {"id": 2, "title": "Spanish", "description": "", "checked": false},
-                {"id": 3, "title": "French", "description": "", "checked": false},
-                {"id": 4, "title": "Other", "description": "", "checked": false}
+                {"id": 1, "title": "English", "description": "", "isSelected": false},
+                {"id": 2, "title": "Spanish", "description": "", "isSelected": false},
+                {"id": 3, "title": "French", "description": "", "isSelected": false},
+                {"id": 4, "title": "Other", "description": "", "isSelected": false}
             ]
         },
         {
@@ -216,11 +216,11 @@
             "description": "Code for all settings person lived in during 5 years prior to date case opened",
             "responseType": "multi-option",
             "responses": [
-                {"id": 1, "title": "Long-term care facility", "description": "E.g. nursing home", "checked": false},
-                {"id": 2, "title": "Board and care home", "description": "", "checked": false},
-                {"id": 3, "title": "Mental health residence", "description": "E.g. psychiatric group home", "checked": false},
-                {"id": 4, "title": "Psychiatric hospital or unit", "description": "", "checked": false},
-                {"id": 5, "title": "Setting for persons with intellectual disability", "description": "", "checked": false}
+                {"id": 1, "title": "Long-term care facility", "description": "E.g. nursing home", "isSelected": false},
+                {"id": 2, "title": "Board and care home", "description": "", "isSelected": false},
+                {"id": 3, "title": "Mental health residence", "description": "E.g. psychiatric group home", "isSelected": false},
+                {"id": 4, "title": "Psychiatric hospital or unit", "description": "", "isSelected": false},
+                {"id": 5, "title": "Setting for persons with intellectual disability", "description": "", "isSelected": false}
             ]
         },
         {
@@ -233,12 +233,12 @@
             "description": "Making decisions regarding tasks of daily life",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "", "checked": false},
-                {"id": 2, "title": "Modified independence", "description": "Some difficulty in new situations only", "checked": false},
-                {"id": 3, "title": "Minimally impaired", "description": "In specific recurring situations, decisions become poor or unsafe; supervision necessary at those times", "checked": false},
-                {"id": 4, "title": "Moderately impaired", "description": "Decisions consistently poor or unsafe; supervision required at all times", "checked": false},
-                {"id": 5, "title": "Severely impaired", "description": "Never or rarely makes decisions", "checked": false},
-                {"id": 5, "title": "No discernable consciousness, coma", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "", "isSelected": false},
+                {"id": 2, "title": "Modified independence", "description": "Some difficulty in new situations only", "isSelected": false},
+                {"id": 3, "title": "Minimally impaired", "description": "In specific recurring situations, decisions become poor or unsafe; supervision necessary at those times", "isSelected": false},
+                {"id": 4, "title": "Moderately impaired", "description": "Decisions consistently poor or unsafe; supervision required at all times", "isSelected": false},
+                {"id": 5, "title": "Severely impaired", "description": "Never or rarely makes decisions", "isSelected": false},
+                {"id": 5, "title": "No discernable consciousness, coma", "description": "", "isSelected": false}
             ]
         },
         {
@@ -251,9 +251,9 @@
             "description": "",
             "responseType": "multi-option",
             "responses": [
-                {"id": 1, "title": "Short-term memory OK", "description": "Seems / appears to recall after 5 minutes", "checked": false},
-                {"id": 2, "title": "Procedural memory OK", "description": "Can perform all or almost all steps in a multitask sequence without cues", "checked": false},
-                {"id": 3, "title": "Situational memor OK", "description": "Both: recognizes caregivers names / faces frequently encountered AND knows location of places regularly visited", "checked": false}
+                {"id": 1, "title": "Short-term memory OK", "description": "Seems / appears to recall after 5 minutes", "isSelected": false},
+                {"id": 2, "title": "Procedural memory OK", "description": "Can perform all or almost all steps in a multitask sequence without cues", "isSelected": false},
+                {"id": 3, "title": "Situational memor OK", "description": "Both: recognizes caregivers names / faces frequently encountered AND knows location of places regularly visited", "isSelected": false}
             ]
         },
         {
@@ -266,9 +266,9 @@
             "description": "",
             "responseType": "multi-option",
             "responses": [
-                {"id": 1, "title": "Easily distracted", "description": "E.g. episodes of difficulty paying attention; gets sidetracked", "checked": false},
-                {"id": 2, "title": "Episodes of disorganized speech", "description": "E.g. speech is nonsensical, irrelevant, or rambling from subject to subject, loses train of thought", "checked": false},
-                {"id": 3, "title": "Mental function varies over the course of the day", "description": "E.g. sometimes better, sometimes worse", "checked": false}
+                {"id": 1, "title": "Easily distracted", "description": "E.g. episodes of difficulty paying attention; gets sidetracked", "isSelected": false},
+                {"id": 2, "title": "Episodes of disorganized speech", "description": "E.g. speech is nonsensical, irrelevant, or rambling from subject to subject, loses train of thought", "isSelected": false},
+                {"id": 3, "title": "Mental function varies over the course of the day", "description": "E.g. sometimes better, sometimes worse", "isSelected": false}
             ]
         },
         {
@@ -281,8 +281,8 @@
             "description": "E.g. restlessness, lethargy, difficult to arouse, altered environmental perception",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -295,10 +295,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Improved", "description": "", "checked": false},
-                {"id": 2, "title": "No change", "description": "", "checked": false},
-                {"id": 3, "title": "Declined", "description": "", "checked": false},
-                {"id": 4, "title": "Uncertain", "description": "", "checked": false}
+                {"id": 1, "title": "Improved", "description": "", "isSelected": false},
+                {"id": 2, "title": "No change", "description": "", "isSelected": false},
+                {"id": 3, "title": "Declined", "description": "", "isSelected": false},
+                {"id": 4, "title": "Uncertain", "description": "", "isSelected": false}
             ]
         },
         {
@@ -311,10 +311,10 @@
             "description": "Expressing information content - both verbal and non-verbal",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Understood", "description": "Expresses without difficulty", "checked": false},
-                {"id": 2, "title": "Often understood", "description": "Difficulty finding words or finishing thoughts but if given time, little or no prompting required", "checked": false},
-                {"id": 3, "title": "Sometimes understood", "description": "Ability is limited to making concrete requests", "checked": false},
-                {"id": 4, "title": "Rarely or never understood", "description": "", "checked": false}
+                {"id": 1, "title": "Understood", "description": "Expresses without difficulty", "isSelected": false},
+                {"id": 2, "title": "Often understood", "description": "Difficulty finding words or finishing thoughts but if given time, little or no prompting required", "isSelected": false},
+                {"id": 3, "title": "Sometimes understood", "description": "Ability is limited to making concrete requests", "isSelected": false},
+                {"id": 4, "title": "Rarely or never understood", "description": "", "isSelected": false}
             ]
         },
         {
@@ -327,11 +327,11 @@
             "description": "Understanding verbal information content",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Understands", "description": "Clear comprehension", "checked": false},
-                {"id": 2, "title": "Usually understands", "description": "Misses some part / intent of message but comprehends most conversation", "checked": false},
-                {"id": 3, "title": "Often understands", "description": "Misses some part / intent of message but with repetition or explanation can often comprehend conversation", "checked": false},
-                {"id": 4, "title": "Sometimes understands", "description": "Responds adequately to simple, direct communication only", "checked": false},
-                {"id": 5, "title": "Rarely or never understands", "description": "", "checked": false}
+                {"id": 1, "title": "Understands", "description": "Clear comprehension", "isSelected": false},
+                {"id": 2, "title": "Usually understands", "description": "Misses some part / intent of message but comprehends most conversation", "isSelected": false},
+                {"id": 3, "title": "Often understands", "description": "Misses some part / intent of message but with repetition or explanation can often comprehend conversation", "isSelected": false},
+                {"id": 4, "title": "Sometimes understands", "description": "Responds adequately to simple, direct communication only", "isSelected": false},
+                {"id": 5, "title": "Rarely or never understands", "description": "", "isSelected": false}
             ]
         },
         {
@@ -344,11 +344,11 @@
             "description": "Ability to hear (with hearing applicance normally used)",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Adequate", "description": "No difficulty in normal conversation, listening to TV", "checked": false},
-                {"id": 2, "title": "Minimal difficulty", "description": "Difficulty in some environments (e.g. when person speaks softly)", "checked": false},
-                {"id": 3, "title": "Moderate difficulty", "description": "Problem hearing normal conversation, requires quiet setting to hear well", "checked": false},
-                {"id": 4, "title": "Severe difficulty", "description": "Difficulty in all situations", "checked": false},
-                {"id": 5, "title": "No hearing", "description": "", "checked": false}
+                {"id": 1, "title": "Adequate", "description": "No difficulty in normal conversation, listening to TV", "isSelected": false},
+                {"id": 2, "title": "Minimal difficulty", "description": "Difficulty in some environments (e.g. when person speaks softly)", "isSelected": false},
+                {"id": 3, "title": "Moderate difficulty", "description": "Problem hearing normal conversation, requires quiet setting to hear well", "isSelected": false},
+                {"id": 4, "title": "Severe difficulty", "description": "Difficulty in all situations", "isSelected": false},
+                {"id": 5, "title": "No hearing", "description": "", "isSelected": false}
             ]
         },
         {
@@ -361,11 +361,11 @@
             "description": "Ability to see in adequate light",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Adequate", "description": "Sees fine detail, including regular print in newspaper / books", "checked": false},
-                {"id": 2, "title": "Minimal difficulty", "description": "Sees large print, but not regular print in newspapers / books", "checked": false},
-                {"id": 3, "title": "Moderate difficulty", "description": "Limited visionM not able to see newspaper headlines, but can identify objects", "checked": false},
-                {"id": 4, "title": "Severe difficulty", "description": "Object identification in question, but eyes appear to follow objects; sees only light, colors, shapes", "checked": false},
-                {"id": 5, "title": "No vision", "description": "", "checked": false}
+                {"id": 1, "title": "Adequate", "description": "Sees fine detail, including regular print in newspaper / books", "isSelected": false},
+                {"id": 2, "title": "Minimal difficulty", "description": "Sees large print, but not regular print in newspapers / books", "isSelected": false},
+                {"id": 3, "title": "Moderate difficulty", "description": "Limited visionM not able to see newspaper headlines, but can identify objects", "isSelected": false},
+                {"id": 4, "title": "Severe difficulty", "description": "Object identification in question, but eyes appear to follow objects; sees only light, colors, shapes", "isSelected": false},
+                {"id": 5, "title": "No vision", "description": "", "isSelected": false}
             ]
         },
         {
@@ -378,10 +378,10 @@
             "description": "E.g. \"Nothing matters; would rather be dead; What's the use, regret having lived so long\"",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -394,10 +394,10 @@
             "description": "E.g. easily annoyed, anger at care received",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -410,10 +410,10 @@
             "description": "E.g. fear of being abandoned, being let alone, being with others, intense fear of specific objects or situations",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -426,10 +426,10 @@
             "description": "E.g. persistently seeks medical attention, incessant concern with body functions",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -442,10 +442,10 @@
             "description": "E.g. persistently seeks attention / reassurance regarding schedules, meals, laundry, clothing, relationships",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -458,10 +458,10 @@
             "description": "E.g. furrowed brow, constant frowning",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -474,10 +474,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -490,10 +490,10 @@
             "description": "E.g. believes he or she is about to die, have a heart attack",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -506,10 +506,10 @@
             "description": "E.g. long-standing activities, being with family / friends",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -522,10 +522,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -538,10 +538,10 @@
             "description": "E.g. \"I don't enjoy anything anymore\"",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -554,10 +554,10 @@
             "description": "Little interest or pleasure in things you normally enjoy",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not in last 3 days", "description": "", "checked": false},
-                {"id": 2, "title": "Not in last 3 days, but often feels that way", "description": "", "checked": false},
-                {"id": 3, "title": "In 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Person could not (would not) respond", "description": "", "checked": false}
+                {"id": 1, "title": "Not in last 3 days", "description": "", "isSelected": false},
+                {"id": 2, "title": "Not in last 3 days, but often feels that way", "description": "", "isSelected": false},
+                {"id": 3, "title": "In 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Person could not (would not) respond", "description": "", "isSelected": false}
             ]
         },
         {
@@ -570,10 +570,10 @@
             "description": "Anxious, restless, or uneasy",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not in last 3 days", "description": "", "checked": false},
-                {"id": 2, "title": "Not in last 3 days, but often feels that way", "description": "", "checked": false},
-                {"id": 3, "title": "In 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Person could not (would not) respond", "description": "", "checked": false}
+                {"id": 1, "title": "Not in last 3 days", "description": "", "isSelected": false},
+                {"id": 2, "title": "Not in last 3 days, but often feels that way", "description": "", "isSelected": false},
+                {"id": 3, "title": "In 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Person could not (would not) respond", "description": "", "isSelected": false}
             ]
         },
         {
@@ -586,10 +586,10 @@
             "description": "Sad, depressed, or hopeless",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not in last 3 days", "description": "", "checked": false},
-                {"id": 2, "title": "Not in last 3 days, but often feels that way", "description": "", "checked": false},
-                {"id": 3, "title": "In 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Person could not (would not) respond", "description": "", "checked": false}
+                {"id": 1, "title": "Not in last 3 days", "description": "", "isSelected": false},
+                {"id": 2, "title": "Not in last 3 days, but often feels that way", "description": "", "isSelected": false},
+                {"id": 3, "title": "In 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Person could not (would not) respond", "description": "", "isSelected": false}
             ]
         },
         {
@@ -602,10 +602,10 @@
             "description": "Moved with no rational purpose, seemingly oblivious to needs or safety",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -618,10 +618,10 @@
             "description": "E.g. others were threatened, screamed at, cursed at",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -634,10 +634,10 @@
             "description": "E.g. others were hit, shoved, scratched, sexually abused",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -650,10 +650,10 @@
             "description": "E.g. made disruptive sounds or noises, screamed out, smeared or threw food or feces, hoarded, rummaged through other's belongings",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -666,10 +666,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -682,10 +682,10 @@
             "description": "E.g. taking medications/injections, ADL assistance, eating",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -698,11 +698,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Never", "description": "", "checked": false},
-                {"id": 2, "title": "More than 30 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "8 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "In last 30 days", "description": "", "checked": false},
-                {"id": 5, "title": "Unable to determine", "description": "", "checked": false}
+                {"id": 1, "title": "Never", "description": "", "isSelected": false},
+                {"id": 2, "title": "More than 30 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "8 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "In last 30 days", "description": "", "isSelected": false},
+                {"id": 5, "title": "Unable to determine", "description": "", "isSelected": false}
             ]
         },
         {
@@ -715,11 +715,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Never", "description": "", "checked": false},
-                {"id": 2, "title": "More than 30 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "8 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "In last 30 days", "description": "", "checked": false},
-                {"id": 5, "title": "Unable to determine", "description": "", "checked": false}
+                {"id": 1, "title": "Never", "description": "", "isSelected": false},
+                {"id": 2, "title": "More than 30 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "8 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "In last 30 days", "description": "", "isSelected": false},
+                {"id": 5, "title": "Unable to determine", "description": "", "isSelected": false}
             ]
         },
         {
@@ -732,11 +732,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Never", "description": "", "checked": false},
-                {"id": 2, "title": "More than 30 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "8 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "In last 30 days", "description": "", "checked": false},
-                {"id": 5, "title": "Unable to determine", "description": "", "checked": false}
+                {"id": 1, "title": "Never", "description": "", "isSelected": false},
+                {"id": 2, "title": "More than 30 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "8 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "In last 30 days", "description": "", "isSelected": false},
+                {"id": 5, "title": "Unable to determine", "description": "", "isSelected": false}
             ]
         },
         {
@@ -749,11 +749,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Never", "description": "", "checked": false},
-                {"id": 2, "title": "More than 30 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "8 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "In last 30 days", "description": "", "checked": false},
-                {"id": 5, "title": "Unable to determine", "description": "", "checked": false}
+                {"id": 1, "title": "Never", "description": "", "isSelected": false},
+                {"id": 2, "title": "More than 30 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "8 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "In last 30 days", "description": "", "isSelected": false},
+                {"id": 5, "title": "Unable to determine", "description": "", "isSelected": false}
             ]
         },
         {
@@ -766,11 +766,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Never", "description": "", "checked": false},
-                {"id": 2, "title": "More than 30 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "8 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "In last 30 days", "description": "", "checked": false},
-                {"id": 5, "title": "Unable to determine", "description": "", "checked": false}
+                {"id": 1, "title": "Never", "description": "", "isSelected": false},
+                {"id": 2, "title": "More than 30 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "8 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "In last 30 days", "description": "", "isSelected": false},
+                {"id": 5, "title": "Unable to determine", "description": "", "isSelected": false}
             ]
         },
         {
@@ -783,11 +783,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Never", "description": "", "checked": false},
-                {"id": 2, "title": "More than 30 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "8 to 30 days ago", "description": "", "checked": false},
-                {"id": 4, "title": "In last 30 days", "description": "", "checked": false},
-                {"id": 5, "title": "Unable to determine", "description": "", "checked": false}
+                {"id": 1, "title": "Never", "description": "", "isSelected": false},
+                {"id": 2, "title": "More than 30 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "8 to 30 days ago", "description": "", "isSelected": false},
+                {"id": 4, "title": "In last 30 days", "description": "", "isSelected": false},
+                {"id": 5, "title": "Unable to determine", "description": "", "isSelected": false}
             ]
         },
         {
@@ -800,8 +800,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -814,9 +814,9 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No decline", "description": "", "checked": false},
-                {"id": 2, "title": "Decline, not distressed", "description": "", "checked": false},
-                {"id": 3, "title": "Decline, distressed", "description": "", "checked": false}
+                {"id": 1, "title": "No decline", "description": "", "isSelected": false},
+                {"id": 2, "title": "Decline, not distressed", "description": "", "isSelected": false},
+                {"id": 3, "title": "Decline, distressed", "description": "", "isSelected": false}
             ]
         },
         {
@@ -829,10 +829,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Less than 1 hour", "description": "", "checked": false},
-                {"id": 2, "title": "1-2 hours", "description": "", "checked": false},
-                {"id": 3, "title": "More than 2 hours but less than 8 hours", "description": "", "checked": false},
-                {"id": 4, "title": "8 hours or more", "description": "", "checked": false}
+                {"id": 1, "title": "Less than 1 hour", "description": "", "isSelected": false},
+                {"id": 2, "title": "1-2 hours", "description": "", "isSelected": false},
+                {"id": 3, "title": "More than 2 hours but less than 8 hours", "description": "", "isSelected": false},
+                {"id": 4, "title": "8 hours or more", "description": "", "isSelected": false}
             ]
         },
         {
@@ -845,8 +845,8 @@
             "description": "E.g. episode of severe personal illness, major loss of income, loss of home",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -859,14 +859,14 @@
             "description": "E.g. planning meals, assembling ingredients, cooking, setting out food and utensils",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -879,14 +879,14 @@
             "description": "E.g. doing dishes, dusting, making bed, tidying up, laundry",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -899,14 +899,14 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -919,14 +919,14 @@
             "description": "E.g. remembering to take medicines, opening bottles, taking correct dosages, giving injenctions, applying ointments",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -939,14 +939,14 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -959,14 +959,14 @@
             "description": "How full flight of stairs is managed (12-14 stairs)",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -979,14 +979,14 @@
             "description": "E.g. selecting items, paying money",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -999,14 +999,14 @@
             "description": "Public transportation or driving self",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No help or supervision", "checked": false},
-                {"id": 2, "title": "Setup help only", "description": "", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "checked": false},
-                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No help or supervision", "isSelected": false},
+                {"id": 2, "title": "Setup help only", "description": "", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Help on some occasions", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Help throughout task, but performs 50% or more of task on own", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Help throughout task, but performs less than 50% of task on own", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during entire period", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -1019,14 +1019,14 @@
             "description": "How takes a full body bath/shower, includes transfers in- and out of tub/shower and how each body part is bathed",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1039,14 +1039,14 @@
             "description": "How manages personal hygiene",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1059,14 +1059,14 @@
             "description": "How dresses and undresses above waist",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1079,14 +1079,14 @@
             "description": "How dresses and undresses below waist",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1099,14 +1099,14 @@
             "description": "How walks between locations on same floor indoors",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1119,14 +1119,14 @@
             "description": "How moves between locations on same floor. If in wheelchair, self-sufficiency once in chair.",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1139,14 +1139,14 @@
             "description": "How moves on off toilet or commode",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1159,14 +1159,14 @@
             "description": "How uses toilet room, cleanses self, changes pad, manages ostomy or catheter, adjusts clothes",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1179,14 +1179,14 @@
             "description": "How moves to and from lying position, turns from side to side, and positions body while in bed",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1199,14 +1199,14 @@
             "description": "How eats and drinks. Includes intake of nourishment by other means (e.g. tube feeding, total parenteral nutrition)",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "checked": false},
-                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "checked": false},
-                {"id": 3, "title": "Supervision", "description": "", "checked": false},
-                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "checked": false},
-                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "checked": false},
-                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "checked": false},
-                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "checked": false},
-                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "checked": false}
+                {"id": 1, "title": "Independent", "description": "No physical assistance, setup, or supervision in any episode", "isSelected": false},
+                {"id": 2, "title": "Independent, setup help only", "description": "Article or device provided or placed within reach, no physical assistance or supervision in any episode", "isSelected": false},
+                {"id": 3, "title": "Supervision", "description": "", "isSelected": false},
+                {"id": 4, "title": "Limited assistance", "description": "Guiding maneuvering of limbs, physical guidance without taking weight", "isSelected": false},
+                {"id": 5, "title": "Extensive assistance", "description": "Weight-bearing support by 1 helper where person still performs 50% or more of subtasks", "isSelected": false},
+                {"id": 6, "title": "Maximal assistance", "description": "Weight-bearing support by 2+ helpers, or support for more than 50% of subtasks", "isSelected": false},
+                {"id": 7, "title": "Total dependence", "description": "Full performance by others during all episodes", "isSelected": false},
+                {"id": 8, "title": "Activity did not occur during entire period", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1219,10 +1219,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Walking, no assistive device", "description": "", "checked": false},
-                {"id": 2, "title": "Walking, uses assistive device", "description": "E.g. cane, walker, crutch, pushing wheelchair", "checked": false},
-                {"id": 3, "title": "Wheelchair, scooter", "description": "", "checked": false},
-                {"id": 4, "title": "Bedbound", "description": "", "checked": false}
+                {"id": 1, "title": "Walking, no assistive device", "description": "", "isSelected": false},
+                {"id": 2, "title": "Walking, uses assistive device", "description": "E.g. cane, walker, crutch, pushing wheelchair", "isSelected": false},
+                {"id": 3, "title": "Wheelchair, scooter", "description": "", "isSelected": false},
+                {"id": 4, "title": "Bedbound", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1235,12 +1235,12 @@
             "description": "Farthest distance walked at one time without sitting down in the last 3 days",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Did not walk", "description": "", "checked": false},
-                {"id": 2, "title": "Less than 15 feet/5 meters", "description": "E.g. cane, walker, crutch, pushing wheelchair", "checked": false},
-                {"id": 3, "title": "15-149 feet/5-49 meters", "description": "", "checked": false},
-                {"id": 4, "title": "150-299 feet/50-99 meters", "description": "", "checked": false},
-                {"id": 5, "title": "300+ feet/100+ meters", "description": "", "checked": false},
-                {"id": 6, "title": "1/2 mile/1 kilometer or more", "description": "", "checked": false}
+                {"id": 1, "title": "Did not walk", "description": "", "isSelected": false},
+                {"id": 2, "title": "Less than 15 feet/5 meters", "description": "E.g. cane, walker, crutch, pushing wheelchair", "isSelected": false},
+                {"id": 3, "title": "15-149 feet/5-49 meters", "description": "", "isSelected": false},
+                {"id": 4, "title": "150-299 feet/50-99 meters", "description": "", "isSelected": false},
+                {"id": 5, "title": "300+ feet/100+ meters", "description": "", "isSelected": false},
+                {"id": 6, "title": "1/2 mile/1 kilometer or more", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1253,13 +1253,13 @@
             "description": "Farthest distance wheeled self at one time in the last 3 days",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Wheeled by others", "description": "", "checked": false},
-                {"id": 2, "title": "Used motorized wheelchair/scooter", "description": "E.g. cane, walker, crutch, pushing wheelchair", "checked": false},
-                {"id": 3, "title": "Wheeled self less than 15 feet/5 meters", "description": "", "checked": false},
-                {"id": 4, "title": "Wheeled self 15-149 feet/5-49 meters", "description": "", "checked": false},
-                {"id": 4, "title": "Wheeled self 150-299 feet/50-99 meters", "description": "", "checked": false},
-                {"id": 5, "title": "Wheeled self 300+ feet/100+ meters", "description": "", "checked": false},
-                {"id": 6, "title": "Did not use wheelchair", "description": "", "checked": false}
+                {"id": 1, "title": "Wheeled by others", "description": "", "isSelected": false},
+                {"id": 2, "title": "Used motorized wheelchair/scooter", "description": "E.g. cane, walker, crutch, pushing wheelchair", "isSelected": false},
+                {"id": 3, "title": "Wheeled self less than 15 feet/5 meters", "description": "", "isSelected": false},
+                {"id": 4, "title": "Wheeled self 15-149 feet/5-49 meters", "description": "", "isSelected": false},
+                {"id": 4, "title": "Wheeled self 150-299 feet/50-99 meters", "description": "", "isSelected": false},
+                {"id": 5, "title": "Wheeled self 300+ feet/100+ meters", "description": "", "isSelected": false},
+                {"id": 6, "title": "Did not use wheelchair", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1272,11 +1272,11 @@
             "description": "E.g. walking",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "None", "description": "", "checked": false},
-                {"id": 2, "title": "Less than 1 hour", "description": "E.g. cane, walker, crutch, pushing wheelchair", "checked": false},
-                {"id": 3, "title": "1-2 hours", "description": "", "checked": false},
-                {"id": 4, "title": "3-4 hours", "description": "", "checked": false},
-                {"id": 4, "title": "More than 4 hours", "description": "", "checked": false}
+                {"id": 1, "title": "None", "description": "", "isSelected": false},
+                {"id": 2, "title": "Less than 1 hour", "description": "E.g. cane, walker, crutch, pushing wheelchair", "isSelected": false},
+                {"id": 3, "title": "1-2 hours", "description": "", "isSelected": false},
+                {"id": 4, "title": "3-4 hours", "description": "", "isSelected": false},
+                {"id": 4, "title": "More than 4 hours", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1289,10 +1289,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No days out", "description": "", "checked": false},
-                {"id": 2, "title": "Did not go out in last 3 days, but usually goes out over 3 day period", "description": "E.g. cane, walker, crutch, pushing wheelchair", "checked": false},
-                {"id": 3, "title": "1-2 days", "description": "", "checked": false},
-                {"id": 4, "title": "3 days", "description": "", "checked": false}
+                {"id": 1, "title": "No days out", "description": "", "isSelected": false},
+                {"id": 2, "title": "Did not go out in last 3 days, but usually goes out over 3 day period", "description": "E.g. cane, walker, crutch, pushing wheelchair", "isSelected": false},
+                {"id": 3, "title": "1-2 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1305,8 +1305,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1319,8 +1319,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1333,10 +1333,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Improved", "description": "", "checked": false},
-                {"id": 2, "title": "No change", "description": "E.g. cane, walker, crutch, pushing wheelchair", "checked": false},
-                {"id": 3, "title": "Declined", "description": "", "checked": false},
-                {"id": 4, "title": "Uncertain", "description": "", "checked": false}
+                {"id": 1, "title": "Improved", "description": "", "isSelected": false},
+                {"id": 2, "title": "No change", "description": "E.g. cane, walker, crutch, pushing wheelchair", "isSelected": false},
+                {"id": 3, "title": "Declined", "description": "", "isSelected": false},
+                {"id": 4, "title": "Uncertain", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1349,8 +1349,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1363,8 +1363,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1377,13 +1377,13 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Continent", "description": "Complete control", "checked": false},
-                {"id": 2, "title": "Control with any catheter or ostomy over last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Infrequently incontinent", "description": "Not incontinent over last 3 days, but does have incontinent episodes", "checked": false},
-                {"id": 4, "title": "Occasionally incontinent", "description": "Less than daily", "checked": false},
-                {"id": 4, "title": "Frequently incontinent", "description": "Daily, but some control present", "checked": false},
-                {"id": 5, "title": "Incontinent", "description": "No control present", "checked": false},
-                {"id": 6, "title": "Did not occur", "description": "No urine output from bladder in last 3 days", "checked": false}
+                {"id": 1, "title": "Continent", "description": "Complete control", "isSelected": false},
+                {"id": 2, "title": "Control with any catheter or ostomy over last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Infrequently incontinent", "description": "Not incontinent over last 3 days, but does have incontinent episodes", "isSelected": false},
+                {"id": 4, "title": "Occasionally incontinent", "description": "Less than daily", "isSelected": false},
+                {"id": 4, "title": "Frequently incontinent", "description": "Daily, but some control present", "isSelected": false},
+                {"id": 5, "title": "Incontinent", "description": "No control present", "isSelected": false},
+                {"id": 6, "title": "Did not occur", "description": "No urine output from bladder in last 3 days", "isSelected": false}
             ]
         },
         {
@@ -1396,10 +1396,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "None", "description": "", "checked": false},
-                {"id": 2, "title": "Condom catheter", "description": "", "checked": false},
-                {"id": 3, "title": "Indwelling catheter", "description": "", "checked": false},
-                {"id": 4, "title": "Cystostomy, nephrostomy, ureterostomy", "description": "", "checked": false}
+                {"id": 1, "title": "None", "description": "", "isSelected": false},
+                {"id": 2, "title": "Condom catheter", "description": "", "isSelected": false},
+                {"id": 3, "title": "Indwelling catheter", "description": "", "isSelected": false},
+                {"id": 4, "title": "Cystostomy, nephrostomy, ureterostomy", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1412,13 +1412,13 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Continent", "description": "Complete control", "checked": false},
-                {"id": 2, "title": "Control with ostomy", "description": "Control with ostomy device over last 3 days", "checked": false},
-                {"id": 3, "title": "Infrequently incontinent", "description": "Not incontinent over last 3 days, but does have incontinent episodes", "checked": false},
-                {"id": 4, "title": "Occasionally incontinent", "description": "Less than daily", "checked": false},
-                {"id": 4, "title": "Frequently incontinent", "description": "Daily, but some control present", "checked": false},
-                {"id": 5, "title": "Incontinent", "description": "No control present", "checked": false},
-                {"id": 6, "title": "Did not occur", "description": "No bowel movement in last 3 days", "checked": false}
+                {"id": 1, "title": "Continent", "description": "Complete control", "isSelected": false},
+                {"id": 2, "title": "Control with ostomy", "description": "Control with ostomy device over last 3 days", "isSelected": false},
+                {"id": 3, "title": "Infrequently incontinent", "description": "Not incontinent over last 3 days, but does have incontinent episodes", "isSelected": false},
+                {"id": 4, "title": "Occasionally incontinent", "description": "Less than daily", "isSelected": false},
+                {"id": 4, "title": "Frequently incontinent", "description": "Daily, but some control present", "isSelected": false},
+                {"id": 5, "title": "Incontinent", "description": "No control present", "isSelected": false},
+                {"id": 6, "title": "Did not occur", "description": "No bowel movement in last 3 days", "isSelected": false}
             ]
         },
         {
@@ -1431,8 +1431,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1445,10 +1445,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1461,10 +1461,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1477,10 +1477,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1493,10 +1493,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1509,10 +1509,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1525,10 +1525,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1541,10 +1541,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1557,10 +1557,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1573,10 +1573,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1589,10 +1589,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1605,10 +1605,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1621,10 +1621,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1637,10 +1637,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1653,10 +1653,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1669,10 +1669,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1685,10 +1685,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1701,10 +1701,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1717,10 +1717,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1733,10 +1733,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1749,10 +1749,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1765,10 +1765,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "checked": false},
-                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "checked": false},
-                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Primary diagnoses/diagnoses for current stay", "description": "", "isSelected": false},
+                {"id": 3, "title": "Diagnoses present, receiving active treatment", "description": "", "isSelected": false},
+                {"id": 4, "title": "Diagnoses present, monitored but no active treatment", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1791,10 +1791,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No fall in last 90 days", "description": "", "checked": false},
-                {"id": 2, "title": "No fall in last 30 days, but fell 31-90 days ago", "description": "", "checked": false},
-                {"id": 3, "title": "One fall in last 30 days", "description": "", "checked": false},
-                {"id": 4, "title": "Two or more falls in last 30 days", "description": "", "checked": false}
+                {"id": 1, "title": "No fall in last 90 days", "description": "", "isSelected": false},
+                {"id": 2, "title": "No fall in last 30 days, but fell 31-90 days ago", "description": "", "isSelected": false},
+                {"id": 3, "title": "One fall in last 30 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Two or more falls in last 30 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1807,8 +1807,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1821,11 +1821,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1838,11 +1838,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1855,11 +1855,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1872,11 +1872,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1889,11 +1889,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1906,11 +1906,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1923,11 +1923,11 @@
             "description": "E.g. loosening of associations, blocking, flight of ideas, tangentiality, circumstantially",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1940,11 +1940,11 @@
             "description": "Fixed false beliefs",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1957,11 +1957,11 @@
             "description": "False sensory perceptions",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1974,11 +1974,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -1991,11 +1991,11 @@
             "description": "Regurgitation of acid from stomach to throat",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2008,11 +2008,11 @@
             "description": "No bowel movement in 3 days or difficult passage of hard stool",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2025,11 +2025,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2042,11 +2042,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2059,11 +2059,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2076,11 +2076,11 @@
             "description": "Excessive amount of sleep that interferes with person's normal functioning",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2093,11 +2093,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2110,11 +2110,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2127,11 +2127,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2144,11 +2144,11 @@
             "description": "Unusally poor hygiene, unkempt, disheveled",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2161,11 +2161,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Not present", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "Not present", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited on 2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2178,10 +2178,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Absent of symptom", "description": "", "checked": false},
-                {"id": 2, "title": "Absent at rest, but present when performed moderate activities", "description": "", "checked": false},
-                {"id": 3, "title": "Absent at rest, but present when performed normal daily activities", "description": "", "checked": false},
-                {"id": 4, "title": "Present at rest", "description": "", "checked": false}
+                {"id": 1, "title": "Absent of symptom", "description": "", "isSelected": false},
+                {"id": 2, "title": "Absent at rest, but present when performed moderate activities", "description": "", "isSelected": false},
+                {"id": 3, "title": "Absent at rest, but present when performed normal daily activities", "description": "", "isSelected": false},
+                {"id": 4, "title": "Present at rest", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2194,11 +2194,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "None", "description": "", "checked": false},
-                {"id": 2, "title": "Minimal", "description": "Diminished energy but completes normal daily activities", "checked": false},
-                {"id": 3, "title": "Moderate", "description": "Due to diminished energy, unable to finish normal daily activities", "checked": false},
-                {"id": 4, "title": "Severe", "description": "Due to diminished energy, unable to start some normal daily activities", "checked": false},
-                {"id": 5, "title": "Unable to commence any normal daily activites", "description": "Due to diminished energy", "checked": false}
+                {"id": 1, "title": "None", "description": "", "isSelected": false},
+                {"id": 2, "title": "Minimal", "description": "Diminished energy but completes normal daily activities", "isSelected": false},
+                {"id": 3, "title": "Moderate", "description": "Due to diminished energy, unable to finish normal daily activities", "isSelected": false},
+                {"id": 4, "title": "Severe", "description": "Due to diminished energy, unable to start some normal daily activities", "isSelected": false},
+                {"id": 5, "title": "Unable to commence any normal daily activites", "description": "Due to diminished energy", "isSelected": false}
             ]
         },
         {
@@ -2211,10 +2211,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No pain", "description": "", "checked": false},
-                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "checked": false},
-                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "checked": false}
+                {"id": 1, "title": "No pain", "description": "", "isSelected": false},
+                {"id": 2, "title": "Present but not exhibited in last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Exhibited on 1-2 of last 3 days", "description": "", "isSelected": false},
+                {"id": 4, "title": "Exhibited daily in last 3 days", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2227,11 +2227,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No pain", "description": "", "checked": false},
-                {"id": 2, "title": "Mild", "description": "", "checked": false},
-                {"id": 3, "title": "Moderate", "description": "", "checked": false},
-                {"id": 4, "title": "Severe", "description": "", "checked": false},
-                {"id": 5, "title": "Times when pain is horrible or excruciating", "description": "", "checked": false}
+                {"id": 1, "title": "No pain", "description": "", "isSelected": false},
+                {"id": 2, "title": "Mild", "description": "", "isSelected": false},
+                {"id": 3, "title": "Moderate", "description": "", "isSelected": false},
+                {"id": 4, "title": "Severe", "description": "", "isSelected": false},
+                {"id": 5, "title": "Times when pain is horrible or excruciating", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2244,10 +2244,10 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No pain", "description": "", "checked": false},
-                {"id": 2, "title": "Single episode during last 3 days", "description": "", "checked": false},
-                {"id": 3, "title": "Intermittent", "description": "", "checked": false},
-                {"id": 4, "title": "Constant", "description": "", "checked": false}
+                {"id": 1, "title": "No pain", "description": "", "isSelected": false},
+                {"id": 2, "title": "Single episode during last 3 days", "description": "", "isSelected": false},
+                {"id": 3, "title": "Intermittent", "description": "", "isSelected": false},
+                {"id": 4, "title": "Constant", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2260,8 +2260,8 @@
             "description": "Times in last 3 days when person experienced sudding pain (from person's point of view)",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2274,12 +2274,12 @@
             "description": "Adequacy of current therapeutic regimen to control pain (from person's point of view)",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No issue of pain", "description": "", "checked": false},
-                {"id": 2, "title": "Pain intensity acceptable to person", "description": "No treatment regimen or change in regimen required", "checked": false},
-                {"id": 3, "title": "Controlled adequately by therapeutic regimen", "description": "", "checked": false},
-                {"id": 4, "title": "Controlled when therapeutic regimen followed, but not always followed as ordered", "description": "", "checked": false},
-                {"id": 5, "title": "Therapeutic regimen followed, but pain control not adequate", "description": "", "checked": false},
-                {"id": 6, "title": "No therapeutic regimen being followed for pain; pain not adequately controlled", "description": "", "checked": false}
+                {"id": 1, "title": "No issue of pain", "description": "", "isSelected": false},
+                {"id": 2, "title": "Pain intensity acceptable to person", "description": "No treatment regimen or change in regimen required", "isSelected": false},
+                {"id": 3, "title": "Controlled adequately by therapeutic regimen", "description": "", "isSelected": false},
+                {"id": 4, "title": "Controlled when therapeutic regimen followed, but not always followed as ordered", "description": "", "isSelected": false},
+                {"id": 5, "title": "Therapeutic regimen followed, but pain control not adequate", "description": "", "isSelected": false},
+                {"id": 6, "title": "No therapeutic regimen being followed for pain; pain not adequately controlled", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2292,8 +2292,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2306,8 +2306,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2320,8 +2320,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2334,11 +2334,11 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Excellent", "description": "", "checked": false},
-                {"id": 2, "title": "Good", "description": "", "checked": false},
-                {"id": 3, "title": "Fair", "description": "", "checked": false},
-                {"id": 4, "title": "Poor", "description": "", "checked": false},
-                {"id": 4, "title": "Could not (would not respond)", "description": "", "checked": false}
+                {"id": 1, "title": "Excellent", "description": "", "isSelected": false},
+                {"id": 2, "title": "Good", "description": "", "isSelected": false},
+                {"id": 3, "title": "Fair", "description": "", "isSelected": false},
+                {"id": 4, "title": "Poor", "description": "", "isSelected": false},
+                {"id": 4, "title": "Could not (would not respond)", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2351,8 +2351,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2365,10 +2365,10 @@
             "description": "Highest number of drinks in any single sitting in last 14 days",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "None", "description": "", "checked": false},
-                {"id": 2, "title": "1", "description": "", "checked": false},
-                {"id": 3, "title": "2-4", "description": "", "checked": false},
-                {"id": 4, "title": "5 or more", "description": "", "checked": false}
+                {"id": 1, "title": "None", "description": "", "isSelected": false},
+                {"id": 2, "title": "1", "description": "", "isSelected": false},
+                {"id": 3, "title": "2-4", "description": "", "isSelected": false},
+                {"id": 4, "title": "5 or more", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2401,8 +2401,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2415,8 +2415,8 @@
             "description": "Ration, country specific",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2429,8 +2429,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2443,8 +2443,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2457,16 +2457,16 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "Normal", "description": "Swallows all types of foods", "checked": false},
-                {"id": 2, "title": "Modified indpendent", "description": "E.g. liquid is sipped, takes limited solid food, need for modification may be unknown", "checked": false},
-                {"id": 3, "title": "Requires diet modification to swallow solid food", "description": "E.g. mechanical diet (e.g. puree, minced, etc.) or only able to ingest specific foods", "checked": false},
-                {"id": 4, "title": "Requires modification to swallow liquids", "description": "E.g. thickened liquids", "checked": false},
-                {"id": 5, "title": "Can swallow only pureed solids and thickened liquids", "description": "", "checked": false},
-                {"id": 6, "title": "Combined oral and parenteral or tube feeding", "description": "", "checked": false},
-                {"id": 7, "title": "Nasogastic tube feeding only", "description": "", "checked": false},
-                {"id": 8, "title": "Abdominal feeding tube", "description": "E.g. PEG tube", "checked": false},
-                {"id": 9, "title": "Parenteral feeding only", "description": "Includes all types of parenteral feedings, such as astotal parenteral nutrition (TPN)", "checked": false},
-                {"id": 10, "title": "Activity did not occur", "description": "During entire period", "checked": false}
+                {"id": 1, "title": "Normal", "description": "Swallows all types of foods", "isSelected": false},
+                {"id": 2, "title": "Modified indpendent", "description": "E.g. liquid is sipped, takes limited solid food, need for modification may be unknown", "isSelected": false},
+                {"id": 3, "title": "Requires diet modification to swallow solid food", "description": "E.g. mechanical diet (e.g. puree, minced, etc.) or only able to ingest specific foods", "isSelected": false},
+                {"id": 4, "title": "Requires modification to swallow liquids", "description": "E.g. thickened liquids", "isSelected": false},
+                {"id": 5, "title": "Can swallow only pureed solids and thickened liquids", "description": "", "isSelected": false},
+                {"id": 6, "title": "Combined oral and parenteral or tube feeding", "description": "", "isSelected": false},
+                {"id": 7, "title": "Nasogastic tube feeding only", "description": "", "isSelected": false},
+                {"id": 8, "title": "Abdominal feeding tube", "description": "E.g. PEG tube", "isSelected": false},
+                {"id": 9, "title": "Parenteral feeding only", "description": "Includes all types of parenteral feedings, such as astotal parenteral nutrition (TPN)", "isSelected": false},
+                {"id": 10, "title": "Activity did not occur", "description": "During entire period", "isSelected": false}
             ]
         },
         {
@@ -2479,8 +2479,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2493,8 +2493,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2507,8 +2507,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2521,8 +2521,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2535,12 +2535,12 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No pressure ulcer", "description": "", "checked": false},
-                {"id": 2, "title": "Any area of persistent skin redness", "description": "", "checked": false},
-                {"id": 3, "title": "Partial loss of skin layers", "description": "", "checked": false},
-                {"id": 4, "title": "Deep craters in skin", "description": "", "checked": false},
-                {"id": 4, "title": "Breaks in skin exposing muscle or bone", "description": "", "checked": false},
-                {"id": 5, "title": "Not codeable", "description": "E.g. necroticeschar predominent", "checked": false}
+                {"id": 1, "title": "No pressure ulcer", "description": "", "isSelected": false},
+                {"id": 2, "title": "Any area of persistent skin redness", "description": "", "isSelected": false},
+                {"id": 3, "title": "Partial loss of skin layers", "description": "", "isSelected": false},
+                {"id": 4, "title": "Deep craters in skin", "description": "", "isSelected": false},
+                {"id": 4, "title": "Breaks in skin exposing muscle or bone", "description": "", "isSelected": false},
+                {"id": 5, "title": "Not codeable", "description": "E.g. necroticeschar predominent", "isSelected": false}
             ]
         },
         {
@@ -2553,8 +2553,8 @@
             "description": "",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2567,8 +2567,8 @@
             "description": "E.g. venous ulcer, arterial ulcer, mixed venous-arterial ulcer, diabetic foot ulcer",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2581,8 +2581,8 @@
             "description": "E.g. lesions, 2nd or 3rd degree bums, healing surgical wounds",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2595,8 +2595,8 @@
             "description": "Other than surgery",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2609,8 +2609,8 @@
             "description": "E.g. bruises, rashes, itching, mottling, herpes zoster, intertrigo, eczema",
             "responseType": "boolean",
             "responses": [
-                {"id": 1, "title": "Yes", "description": "", "checked": false},
-                {"id": 2, "title": "No", "description": "", "checked": false}
+                {"id": 1, "title": "Yes", "description": "", "isSelected": false},
+                {"id": 2, "title": "No", "description": "", "isSelected": false}
             ]
         },
         {
@@ -2623,11 +2623,11 @@
             "description": "E.g. bunions, hammer toes, overlapping toes, structural problems, infections, ulcers",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "No foot problems", "description": "", "checked": false},
-                {"id": 2, "title": "Foot problems, no limitation in walking", "description": "", "checked": false},
-                {"id": 3, "title": "Foot problems, limit walking", "description": "", "checked": false},
-                {"id": 4, "title": "Foot problems prevent walking", "description": "", "checked": false},
-                {"id": 5, "title": "Foot problems, does not walk for other reasons", "description": "", "checked": false}
+                {"id": 1, "title": "No foot problems", "description": "", "isSelected": false},
+                {"id": 2, "title": "Foot problems, no limitation in walking", "description": "", "isSelected": false},
+                {"id": 3, "title": "Foot problems, limit walking", "description": "", "isSelected": false},
+                {"id": 4, "title": "Foot problems prevent walking", "description": "", "isSelected": false},
+                {"id": 5, "title": "Foot problems, does not walk for other reasons", "description": "", "isSelected": false}
             ]
         },
         
@@ -2641,13 +2641,13 @@
             "description": "",
             "responseType": "ordinal-scale",
             "responses": [
-                {"id": 1, "title": "", "description": "", "checked": false},
-                {"id": 2, "title": "", "description": "", "checked": false},
-                {"id": 3, "title": "", "description": "", "checked": false},
-                {"id": 4, "title": "", "description": "", "checked": false},
-                {"id": 5, "title": "", "description": "", "checked": false},
-                {"id": 6, "title": "", "description": "", "checked": false},
-                {"id": 7, "title": "", "description": "", "checked": false}
+                {"id": 1, "title": "", "description": "", "isSelected": false},
+                {"id": 2, "title": "", "description": "", "isSelected": false},
+                {"id": 3, "title": "", "description": "", "isSelected": false},
+                {"id": 4, "title": "", "description": "", "isSelected": false},
+                {"id": 5, "title": "", "description": "", "isSelected": false},
+                {"id": 6, "title": "", "description": "", "isSelected": false},
+                {"id": 7, "title": "", "description": "", "isSelected": false}
             ]
         }
         
