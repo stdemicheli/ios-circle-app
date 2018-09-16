@@ -50,7 +50,7 @@ struct QuestionRepresentation: Codable {
     
 }
 
-struct ResponseRepresentation: Codable {
+struct ResponseRepresentation: Codable, Hashable {
     
     var id: Int
     var title: String

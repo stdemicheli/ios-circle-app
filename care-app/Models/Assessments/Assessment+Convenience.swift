@@ -17,11 +17,17 @@ extension Assessment {
         self.type = type
     }
     
-    convenience init?(assessmentRepresentation: AssessmentRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init?(_ assessmentRepresentation: AssessmentRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(id: assessmentRepresentation.id,
                   name: assessmentRepresentation.name,
                   type: assessmentRepresentation.type,
                   context: context)
+        
+        for questionRep in assessmentRepresentation.questions {
+            if let question = Question(questionRep) {
+                self.addToQuestions(question)
+            }
+        }
     }
     
 }
@@ -48,7 +54,7 @@ extension Question {
         self.responseType = responseType
     }
     
-    convenience init?(questionRepresentation: QuestionRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init?(_ questionRepresentation: QuestionRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(id: String(questionRepresentation.id),
                   sectionId: questionRepresentation.sectionId,
                   sectionName: questionRepresentation.sectionName,
@@ -58,6 +64,14 @@ extension Question {
                   descript: questionRepresentation.descript,
                   responseType: questionRepresentation.responseType,
                   context: context)
+        
+        if let responseReps = questionRepresentation.responses {
+            for responseRep in responseReps {
+                if let response = Response(responseRep) {
+                    self.addToResponses(response)
+                }
+            }
+        }
     }
     
 }
@@ -72,7 +86,7 @@ extension Response {
         self.checked = checked
     }
     
-    convenience init?(responseRepresentation: ResponseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init?(_ responseRepresentation: ResponseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(id: String(responseRepresentation.id),
                   title: responseRepresentation.title,
                   descript: responseRepresentation.descript,
