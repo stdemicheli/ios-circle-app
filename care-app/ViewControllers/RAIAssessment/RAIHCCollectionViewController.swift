@@ -7,17 +7,46 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "RAIAssessmentCell"
-let assessment: [String: String] = ["type": "ordinal-scale-cell"]
 
-class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCollectionViewCellDelegate {
+class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate, RAIAssessmentCollectionViewCellDelegate {
+    
+    // MARK: - Properties
+    
+    let assessmentController = AssessmentController()
+    
+    lazy var frc: NSFetchedResultsController<Assessment> = {
+        let fetchRequest: NSFetchRequest<Assessment> = Assessment.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "type", ascending: true)]
+        fetchRequest.predicate = NSPredicate(format: "type == %@", "rai_hc")
+        let moc = CoreDataStack.shared.mainContext
+        
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: moc,
+                                             sectionNameKeyPath: "name",
+                                             cacheName: nil)
+        
+        frc.delegate = self
+        try! frc.performFetch()
+        return frc
+    }()
+    
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(RAIAssessmentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.isPagingEnabled = true
         self.collectionView.showsHorizontalScrollIndicator = false
+        
+        assessmentController.fetchAndSaveRAIAssessment_HC { (error) in
+            if let error = error {
+                NSLog("Error putting data to server: \(error)")
+                return
+            }
+        }
     }
 
     // MARK: RAIAssessmentCollectionViewCellProtocol
@@ -31,28 +60,36 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
     }
     
     func next() {
-        
+        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        let contentOffset = collectionView.contentOffset
+        collectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width,
+                                                  y: contentOffset.y,
+                                                  width: cellSize.width,
+                                                  height: cellSize.height), animated: true)
     }
     
     func previous() {
-        
+        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        let contentOffset = collectionView.contentOffset
+        collectionView.scrollRectToVisible(CGRect(x: contentOffset.x - cellSize.width,
+                                                  y: contentOffset.y,
+                                                  width: cellSize.width,
+                                                  height: cellSize.height), animated: true)
     }
     
     
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return frc.fetchedObjects?[section].questions?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RAIAssessmentCollectionViewCell
         cell.delegate = self
+        
+        let question = frc.fetchedObjects?[indexPath.section].questions?[indexPath.item] as! Question
+        cell.question = question
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
         return cell
     }
