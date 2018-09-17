@@ -13,6 +13,7 @@ protocol RAIAssessmentCollectionViewCellDelegate {
     func dismiss()
     func next()
     func previous()
+    func select(_ response: Response, in cell: UICollectionViewCell)
 }
 
 class RAIAssessmentCollectionViewCell: UICollectionViewCell {
@@ -46,8 +47,11 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     private var questionView: UIView!
     private var questionTitleTextLabel: UILabel!
     private var questionSubtitleTextLabel: UILabel!
+    private var questionDescriptionTextLabel: UILabel!
     
     private var answerView: UIView!
+    var answerTableView: UITableView!
+    private var answerReuseIdentifier = "ResponseCell"
     
     private var footerView: UIView!
     private var nextButton: UIButton!
@@ -88,6 +92,10 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         delegate?.previous()
     }
     
+    @objc func selectA(_ response: Response) {
+        delegate?.select(response, in: self)
+    }
+    
     // - MARK: - Private methods
     
     func setupViews() {
@@ -97,45 +105,50 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     }
     
     func setupBodyView() {
+        
+        
         questionView = UIView()
         let questionStackView = UIStackView()
         questionTitleTextLabel = UILabel()
         questionSubtitleTextLabel = UILabel()
-        answerView = UIView()
-        let answerStackView = UIStackView()
+        questionDescriptionTextLabel = UILabel()
         
+        answerView = UIView()
+        answerTableView = UITableView()
         
         questionView.translatesAutoresizingMaskIntoConstraints = false
         questionStackView.translatesAutoresizingMaskIntoConstraints = false
         questionTitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
         questionSubtitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        questionDescriptionTextLabel.translatesAutoresizingMaskIntoConstraints = false
         answerView.translatesAutoresizingMaskIntoConstraints = false
-        answerStackView.translatesAutoresizingMaskIntoConstraints = false
+        answerTableView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(questionView)
         questionView.addSubview(questionStackView)
         questionStackView.addArrangedSubview(questionTitleTextLabel)
         questionStackView.addArrangedSubview(questionSubtitleTextLabel)
+        questionStackView.addArrangedSubview(questionDescriptionTextLabel)
         contentView.addSubview(answerView)
-        answerView.addSubview(answerStackView)
+        answerView.addSubview(answerTableView)
         
         let constraints: [NSLayoutConstraint] = [
             questionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2),
-            questionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
-            questionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            questionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            answerView.topAnchor.constraint(equalTo: questionView.bottomAnchor, constant: 20),
-            answerView.bottomAnchor.constraint(equalTo: footerView.topAnchor, constant: -20),
-            answerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            answerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            questionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 15),
+            questionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            questionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            answerView.topAnchor.constraint(equalTo: questionView.bottomAnchor, constant: 15),
+            answerView.bottomAnchor.constraint(equalTo: footerView.topAnchor, constant: -15),
+            answerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            answerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             questionStackView.topAnchor.constraint(equalTo: questionView.topAnchor, constant: 8),
             questionStackView.leadingAnchor.constraint(equalTo: questionView.leadingAnchor, constant: 8),
             questionStackView.trailingAnchor.constraint(equalTo: questionView.trailingAnchor, constant: -8),
             questionStackView.bottomAnchor.constraint(equalTo: questionView.bottomAnchor, constant: -8),
-            answerStackView.topAnchor.constraint(equalTo: answerView.topAnchor, constant: 8),
-            answerStackView.leadingAnchor.constraint(equalTo: answerView.leadingAnchor, constant: 8),
-            answerStackView.trailingAnchor.constraint(equalTo: answerView.trailingAnchor, constant: -8),
-            answerStackView.bottomAnchor.constraint(equalTo: answerView.bottomAnchor, constant: -8),
+            answerTableView.topAnchor.constraint(equalTo: answerView.topAnchor, constant: 8),
+            answerTableView.leadingAnchor.constraint(equalTo: answerView.leadingAnchor, constant: 8),
+            answerTableView.trailingAnchor.constraint(equalTo: answerView.trailingAnchor, constant: -8),
+            answerTableView.bottomAnchor.constraint(equalTo: answerView.bottomAnchor, constant: -8),
             ]
         NSLayoutConstraint.activate(constraints)
         
@@ -155,11 +168,19 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         questionSubtitleTextLabel.numberOfLines = 0
         questionSubtitleTextLabel.font = UIFont.systemFont(ofSize: 16.0)
         
+        questionDescriptionTextLabel.text = question?.descript
+        questionDescriptionTextLabel.textAlignment = .center
+        questionDescriptionTextLabel.numberOfLines = 0
+        questionDescriptionTextLabel.font = UIFont.systemFont(ofSize: 14.0)
+        
         answerView.backgroundColor = .white
         
-        answerStackView.axis = .vertical
-        answerStackView.distribution = .fillProportionally
-        answerStackView.alignment = .center
+        answerTableView.register(ResponseTableViewCell.self, forCellReuseIdentifier: answerReuseIdentifier)
+        answerTableView.delegate = self
+        answerTableView.dataSource = self
+        answerTableView.isScrollEnabled = false
+        answerTableView.tableFooterView = UIView(frame: .zero) // Covers unused rows with an empty view
+        
     }
     
     func setupHeaderView() {
@@ -276,3 +297,25 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     
 }
 
+extension RAIAssessmentCollectionViewCell: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return responses?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: answerReuseIdentifier, for: indexPath) as! ResponseTableViewCell
+        
+        let response = responses?[indexPath.row] as? Response
+        cell.response = response
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let response = responses?[indexPath.row] as? Response {
+            selectA(response)
+        }
+    }
+    
+}

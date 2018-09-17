@@ -17,6 +17,7 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     
     let assessmentController = AssessmentController()
     
+    // TODO: Use a normal fetch instead of frc
     lazy var frc: NSFetchedResultsController<Assessment> = {
         let fetchRequest: NSFetchRequest<Assessment> = Assessment.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "type", ascending: true)]
@@ -33,6 +34,8 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         return frc
     }()
     
+//    var responseTableView: UITableView!
+    
     // MARK: - Init
     
     override func viewDidLoad() {
@@ -47,6 +50,10 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
                 return
             }
         }
+        
+//        responseTableView = UITableView
+//        responseTableView.delegate = self
+//        responseTableView.dataSource = self
     }
 
     // MARK: RAIAssessmentCollectionViewCellProtocol
@@ -75,6 +82,14 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
                                                   y: contentOffset.y,
                                                   width: cellSize.width,
                                                   height: cellSize.height), animated: true)
+    }
+    
+    func select(_ response: Response, in cell: UICollectionViewCell) {
+        if let indexPath = collectionView.indexPath(for: cell) {
+            // TODO: Move to model controller to select and save
+            assessmentController.select(response)
+            collectionView.reloadItems(at: [indexPath])
+        }
     }
     
     
@@ -152,3 +167,20 @@ extension RAIHCCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 
 }
+
+//extension RAIHCCollectionViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "ResponseCell", for: indexPath)
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//    }
+//
+//}
