@@ -19,8 +19,6 @@ class ResponseTableViewCell: UITableViewCell {
     var responseTextLabel: UILabel!
     var checkButton: UIButton!
     
-    
-    
     func updateViews() {
         responseTextLabel = UILabel()
         checkButton = UIButton(type: .system)

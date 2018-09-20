@@ -9,15 +9,14 @@
 import UIKit
 import CoreData
 
-private let reuseIdentifier = "RAIAssessmentCell"
-
 class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate, RAIAssessmentCollectionViewCellDelegate {
-    
+        
     // MARK: - Properties
     
     let assessmentController = AssessmentController()
+    private let reuseIdentifier = "RAIAssessmentCell"
     
-    // TODO: Use a normal fetch instead of frc
+    // TODO: Use a normal fetch instead of frc --> only fetch one Assessment
     lazy var frc: NSFetchedResultsController<Assessment> = {
         let fetchRequest: NSFetchRequest<Assessment> = Assessment.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "type", ascending: true)]
@@ -34,8 +33,6 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         return frc
     }()
     
-//    var responseTableView: UITableView!
-    
     // MARK: - Init
     
     override func viewDidLoad() {
@@ -46,20 +43,17 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         
         assessmentController.fetchAndSaveRAIAssessment_HC { (error) in
             if let error = error {
-                NSLog("Error putting data to server: \(error)")
+                NSLog("Error fetching RAI HC Assessment from server: \(error)")
                 return
             }
         }
-        
-//        responseTableView = UITableView
-//        responseTableView.delegate = self
-//        responseTableView.dataSource = self
     }
 
     // MARK: RAIAssessmentCollectionViewCellProtocol
     
     func openMenu() {
-        
+        guard let assessment = frc.fetchedObjects?.first else { return }
+        self.present(RAIAssessmentMenuTableViewController(assessment: assessment), animated: true, completion: nil)
     }
     
     func dismiss() {
@@ -84,10 +78,9 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
                                                   height: cellSize.height), animated: true)
     }
     
-    func select(_ response: Response, in cell: UICollectionViewCell) {
-        if let indexPath = collectionView.indexPath(for: cell) {
-            // TODO: Move to model controller to select and save
-            assessmentController.select(response)
+    func select(_ response: Response, in cell: RAIAssessmentCollectionViewCell) {
+        if let indexPath = collectionView.indexPath(for: cell), let question = cell.question {
+            assessmentController.select(response, in: question)
             collectionView.reloadItems(at: [indexPath])
         }
     }
@@ -103,7 +96,7 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RAIAssessmentCollectionViewCell
         cell.delegate = self
         
-        let question = frc.fetchedObjects?[indexPath.section].questions?[indexPath.item] as! Question
+        let question = frc.fetchedObjects?[indexPath.section].questions?[indexPath.item] as? Question
         cell.question = question
         
         cell.currentQuestionIndex = indexPath.item + 1
@@ -167,20 +160,3 @@ extension RAIHCCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 
 }
-
-//extension RAIHCCollectionViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ResponseCell", for: indexPath)
-//        return cell
-//    }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
-//
-//}

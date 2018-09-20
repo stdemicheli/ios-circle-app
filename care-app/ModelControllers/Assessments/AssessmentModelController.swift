@@ -34,8 +34,9 @@ class AssessmentController {
     
     // MARK: - Local
     
-    func select(_ response: Response, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    func select(_ response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
+            question.status = Question.StatusKeys.complete.rawValue
             response.isSelected = !response.isSelected
             
             do {

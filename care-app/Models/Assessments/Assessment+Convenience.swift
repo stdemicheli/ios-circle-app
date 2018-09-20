@@ -34,6 +34,12 @@ extension Assessment {
 
 extension Question {
     
+    enum StatusKeys: String {
+        case open
+        case complete
+        case inProgress
+    }
+    
     convenience init(id: String,
                      sectionId: String,
                      sectionName: String,
@@ -42,6 +48,7 @@ extension Question {
                      subtitle: String,
                      descript: String,
                      responseType: String,
+                     status: String = StatusKeys.open.rawValue,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.id = id
@@ -52,6 +59,7 @@ extension Question {
         self.subtitle = subtitle
         self.descript = descript
         self.responseType = responseType
+        self.status = status
     }
     
     convenience init?(_ questionRepresentation: QuestionRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
