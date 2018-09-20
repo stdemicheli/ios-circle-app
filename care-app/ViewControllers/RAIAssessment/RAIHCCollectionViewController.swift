@@ -15,6 +15,7 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     
     let assessmentController = AssessmentController()
     private let reuseIdentifier = "RAIAssessmentCell"
+    private var cellSize: CGSize!
     
     // TODO: Use a normal fetch instead of frc --> only fetch one Assessment
     lazy var frc: NSFetchedResultsController<Assessment> = {
@@ -41,6 +42,10 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         self.collectionView.isPagingEnabled = true
         self.collectionView.showsHorizontalScrollIndicator = false
         
+        //TODO: use .sortedArray([NSSortDescriptors]) on NSOrderedSet for frc.fetchedObjects?[0].questions, or just simply .array
+        
+        self.cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
+        
         assessmentController.fetchAndSaveRAIAssessment_HC { (error) in
             if let error = error {
                 NSLog("Error fetching RAI HC Assessment from server: \(error)")
@@ -53,7 +58,10 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     
     func openMenu() {
         guard let assessment = frc.fetchedObjects?.first else { return }
-        self.present(RAIAssessmentMenuTableViewController(assessment: assessment), animated: true, completion: nil)
+        let RAIAssessmentMenu = RAIAssessmentMenuViewController(assessment: assessment)
+        RAIAssessmentMenu.delegate = self
+        
+        self.present(RAIAssessmentMenu, animated: true, completion: nil)
     }
     
     func dismiss() {
@@ -61,7 +69,6 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     }
     
     func next() {
-        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         let contentOffset = collectionView.contentOffset
         collectionView.scrollRectToVisible(CGRect(x: contentOffset.x + cellSize.width,
                                                   y: contentOffset.y,
@@ -70,9 +77,18 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     }
     
     func previous() {
-        let cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         let contentOffset = collectionView.contentOffset
         collectionView.scrollRectToVisible(CGRect(x: contentOffset.x - cellSize.width,
+                                                  y: contentOffset.y,
+                                                  width: cellSize.width,
+                                                  height: cellSize.height), animated: true)
+    }
+    
+    func goToCell(with id: String) {
+        dismiss()
+        let contentOffset = collectionView.contentOffset
+        guard let index = getIndex(for: id) else { NSLog("Could not get index for id: \(id)"); return }
+        collectionView.scrollRectToVisible(CGRect(x: CGFloat(index) * cellSize.width,
                                                   y: contentOffset.y,
                                                   width: cellSize.width,
                                                   height: cellSize.height), animated: true)
@@ -83,6 +99,16 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
             assessmentController.select(response, in: question)
             collectionView.reloadItems(at: [indexPath])
         }
+    }
+    
+    private func getIndex(for id: String) -> Int? {
+        //TODO: refactor questions
+        guard let questions = frc.fetchedObjects?[0].questions else { return nil }
+        for (index, question) in questions.enumerated() {
+            guard let question = question as? Question else { continue }
+            if id == question.id { return index }
+        }
+        return nil
     }
     
     

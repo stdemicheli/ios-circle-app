@@ -13,6 +13,7 @@ protocol RAIAssessmentCollectionViewCellDelegate {
     func dismiss()
     func next()
     func previous()
+    func goToCell(with id: String)
     func select(_ response: Response, in cell: RAIAssessmentCollectionViewCell)
 }
 
