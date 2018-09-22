@@ -9,30 +9,31 @@
 import UIKit
 import CoreData
 
-class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate, RAIAssessmentCollectionViewCellDelegate {
-        
+class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCollectionViewCellDelegate {
+    
     // MARK: - Properties
     
     let assessmentController = AssessmentController()
     private let reuseIdentifier = "RAIAssessmentCell"
     private var cellSize: CGSize!
     
-    // TODO: Use a normal fetch instead of frc --> only fetch one Assessment
-    lazy var frc: NSFetchedResultsController<Assessment> = {
-        let fetchRequest: NSFetchRequest<Assessment> = Assessment.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "type", ascending: true)]
-        fetchRequest.predicate = NSPredicate(format: "type == %@", "rai_hc")
+    lazy var frc: NSFetchedResultsController<Question> = {
+        let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sectionId", ascending: true), NSSortDescriptor(key: "id", ascending: false)]
+        fetchRequest.predicate = NSPredicate(format: "assessment.type == %@", AssessmentType.raiHC.rawValue)
         let moc = CoreDataStack.shared.mainContext
         
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                              managedObjectContext: moc,
-                                             sectionNameKeyPath: "name",
+                                             sectionNameKeyPath: nil,
                                              cacheName: nil)
         
         frc.delegate = self
         try! frc.performFetch()
         return frc
     }()
+    
+    var blockOperations: [BlockOperation] = []
     
     // MARK: - Init
     
@@ -46,21 +47,29 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
         
         self.cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         
-        assessmentController.fetchAndSaveRAIAssessment_HC { (error) in
+        assessmentController.fetchAssessment(for: AssessmentType.raiHC) { (error) in
             if let error = error {
                 NSLog("Error fetching RAI HC Assessment from server: \(error)")
                 return
             }
         }
     }
-
+    
+    deinit {
+        for operation: BlockOperation in blockOperations {
+            operation.cancel()
+        }
+        
+        blockOperations.removeAll(keepingCapacity: false)
+    }
+    
     // MARK: RAIAssessmentCollectionViewCellProtocol
     
     func openMenu() {
-        guard let assessment = frc.fetchedObjects?.first else { return }
+        guard let assessment = frc.fetchedObjects?.first?.assessment else { return }
         let RAIAssessmentMenu = RAIAssessmentMenuViewController(assessment: assessment)
         RAIAssessmentMenu.delegate = self
-        
+
         self.present(RAIAssessmentMenu, animated: true, completion: nil)
     }
     
@@ -95,17 +104,15 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     }
     
     func select(_ response: Response, in cell: RAIAssessmentCollectionViewCell) {
-        if let indexPath = collectionView.indexPath(for: cell), let question = cell.question {
+        if let question = cell.question {
             assessmentController.select(response, in: question)
-            collectionView.reloadItems(at: [indexPath])
         }
     }
     
     private func getIndex(for id: String) -> Int? {
         //TODO: refactor questions
-        guard let questions = frc.fetchedObjects?[0].questions else { return nil }
+        guard let questions = frc.fetchedObjects else { return nil }
         for (index, question) in questions.enumerated() {
-            guard let question = question as? Question else { continue }
             if id == question.id { return index }
         }
         return nil
@@ -115,18 +122,18 @@ class RAIHCCollectionViewController: UICollectionViewController, NSFetchedResult
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return frc.fetchedObjects?[section].questions?.count ?? 0
+        return frc.fetchedObjects?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! RAIAssessmentCollectionViewCell
         cell.delegate = self
         
-        let question = frc.fetchedObjects?[indexPath.section].questions?[indexPath.item] as? Question
+        let question = frc.object(at: indexPath)
         cell.question = question
         
         cell.currentQuestionIndex = indexPath.item + 1
-        cell.totalQuestionsCount = frc.fetchedObjects?[indexPath.section].questions?.count ?? 0
+        cell.totalQuestionsCount = frc.fetchedObjects?.count ?? 0
         
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
         return cell
@@ -185,4 +192,47 @@ extension RAIHCCollectionViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
 
+}
+
+extension RAIHCCollectionViewController: NSFetchedResultsControllerDelegate {
+    
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        if type == NSFetchedResultsChangeType.update {
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.reloadItems(at: [indexPath!])
+                    }
+                })
+            )
+        }
+    }
+    
+    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        
+        
+        
+        if type == NSFetchedResultsChangeType.update {
+            blockOperations.append(
+                BlockOperation(block: { [weak self] in
+                    if let this = self {
+                        this.collectionView!.reloadSections(NSIndexSet(index: sectionIndex) as IndexSet)
+                    }
+                })
+            )
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        collectionView!.performBatchUpdates({ () -> Void in
+            for operation: BlockOperation in self.blockOperations {
+                operation.start()
+            }
+        }, completion: { (finished) -> Void in
+            self.blockOperations.removeAll(keepingCapacity: false)
+        })
+    }
+    
 }
