@@ -39,18 +39,18 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(RAIAssessmentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.register(RAIAssessmentCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.isPagingEnabled = true
         self.collectionView.showsHorizontalScrollIndicator = false
         
-        //TODO: use .sortedArray([NSSortDescriptors]) on NSOrderedSet for frc.fetchedObjects?[0].questions, or just simply .array
-        
         self.cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         
-        assessmentController.fetchAssessment(for: AssessmentType.raiHC) { (error) in
-            if let error = error {
-                NSLog("Error fetching RAI HC Assessment from server: \(error)")
-                return
+        if frc.fetchedObjects?.count == 0 {
+            assessmentController.fetchAssessment(for: AssessmentType.raiHC) { (error) in
+                if let error = error {
+                    NSLog("Error fetching RAI HC Assessment: \(error)")
+                    return
+                }
             }
         }
     }
@@ -66,8 +66,8 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
     // MARK: RAIAssessmentCollectionViewCellProtocol
     
     func openMenu() {
-        guard let assessment = frc.fetchedObjects?.first?.assessment else { return }
-        let RAIAssessmentMenu = RAIAssessmentMenuViewController(assessment: assessment)
+        guard let questions = frc.fetchedObjects else { return }
+        let RAIAssessmentMenu = RAIAssessmentMenuViewController(questions: questions)
         RAIAssessmentMenu.delegate = self
 
         self.present(RAIAssessmentMenu, animated: true, completion: nil)

@@ -13,12 +13,8 @@ class RAIAssessmentMenuViewController: UIViewController {
     // MARK: - Properties
     
     var delegate: RAIHCCollectionViewController?
-    let assessment: Assessment!
-    var questions: [Question] {
-        return assessment.questions!.compactMap { $0 as? Question }
-    }
+    var questions: [Question]!
     
-    // TODO: Refactor (either section grouping or refactor json, e.g. assessment --> sections --> questions instead of assessment --> questions)
     var sections: [(String, [Question])] {
         // Group questions by sectionName in a dict: [sectionName : [Question]]
         return Dictionary(grouping: questions, by: { $0.sectionName ?? "" }).sorted { (prev, next) in
@@ -29,6 +25,7 @@ class RAIAssessmentMenuViewController: UIViewController {
             return false
         }
     }
+    
     private let reuseIdentifier = "QuestionCell"
     
     private var questionsTableView: UITableView!
@@ -39,8 +36,8 @@ class RAIAssessmentMenuViewController: UIViewController {
     
     // MARK: - Init
     
-    init(assessment: Assessment) {
-        self.assessment = assessment
+    init(questions: [Question]) {
+        self.questions = questions
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -118,7 +115,7 @@ class RAIAssessmentMenuViewController: UIViewController {
         
         headerTitle.numberOfLines = 1
         headerTitle.textAlignment = .center
-        headerTitle.text = assessment?.name
+        headerTitle.text = "Overview"
         headerTitle.backgroundColor = .green
         
         dismissButton.setTitle("Close", for: .normal)
