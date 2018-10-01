@@ -86,12 +86,13 @@ extension Question {
 
 extension Response {
     
-    convenience init(id: String, title: String, descript: String, isSelected: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init(id: String, title: String, descript: String, isSelected: Bool?, input: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.id = id
         self.title = title
         self.descript = descript
-        self.isSelected = isSelected
+        self.isSelected = isSelected ?? false
+        self.input = input ?? nil
     }
     
     convenience init?(_ responseRepresentation: ResponseRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
@@ -99,6 +100,7 @@ extension Response {
                   title: responseRepresentation.title,
                   descript: responseRepresentation.descript,
                   isSelected: responseRepresentation.isSelected,
+                  input: responseRepresentation.input,
                   context: context)
     }
     

@@ -109,6 +109,12 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         }
     }
     
+    func respond(with input: String, for response: Response, in cell: RAIAssessmentCollectionViewCell) {
+        if let question = cell.question {
+            assessmentController.respond(with: input, for: response, in: question)
+        }
+    }
+    
     private func getIndex(for id: String) -> Int? {
         //TODO: refactor questions
         guard let questions = frc.fetchedObjects else { return nil }
@@ -169,18 +175,10 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
     
     }
     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
 
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension RAIHCCollectionViewController: UICollectionViewDelegateFlowLayout {
     
@@ -193,6 +191,8 @@ extension RAIHCCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 
 }
+
+// MARK: - NSFetchedResultsControllerDelegate
 
 extension RAIHCCollectionViewController: NSFetchedResultsControllerDelegate {
     
@@ -211,8 +211,6 @@ extension RAIHCCollectionViewController: NSFetchedResultsControllerDelegate {
     }
     
     public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        
-        
         
         if type == NSFetchedResultsChangeType.update {
             blockOperations.append(

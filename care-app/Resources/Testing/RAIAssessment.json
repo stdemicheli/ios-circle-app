@@ -47,7 +47,9 @@
             "subtitle": "",
             "description": "",
             "responseType": "date",
-            
+            "responses": [
+                {"id": 1, "title": "Pick a date", "description": "", "response": ""}
+            ]
         },
         {
             "id": 10,
@@ -57,7 +59,10 @@
             "title": "Person's expressed goals of care",
             "subtitle": "",
             "description": "",
-            "responseType": "open"
+            "responseType": "open",
+            "responses": [
+                {"id": 1, "title": "Enter the person's expressed goals of care", "description": "", "response": ""}
+            ]
         },
         {
             "id": 11,
@@ -67,7 +72,10 @@
             "title": "Postal / ZIP code of usual living arrangement",
             "subtitle": "",
             "description": "",
-            "responseType": "open"
+            "responseType": "open",
+            "responses": [
+                {"id": 1, "title": "Enter the person's expressed goals of care", "description": "", "response": ""}
+            ]
         },
         {
             "id": 12,
@@ -170,7 +178,10 @@
             "title": "Date case opened",
             "subtitle": "",
             "description": "",
-            "responseType": "date"
+            "responseType": "date",
+            "responses": [
+                {"id": 1, "title": "Pick a date", "description": "", "response": ""}
+            ]
         },
         {
             "id": 18,
@@ -1779,7 +1790,10 @@
             "title": "Other diagnoses",
             "subtitle": "",
             "description": "",
-            "responseType": "open"
+            "responseType": "open",
+            "responses": [
+                {"id": 1, "title": "Provide a diagnosis", "description": "", "response": ""}
+            ]
         },
         {
             "id": 106,

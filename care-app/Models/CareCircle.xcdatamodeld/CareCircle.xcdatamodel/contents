@@ -50,6 +50,7 @@
     <entity name="Response" representedClassName="Response" syncable="YES" codeGenerationType="class">
         <attribute name="descript" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="input" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isSelected" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="responses" inverseEntity="Question" syncable="YES"/>
@@ -60,6 +61,6 @@
         <element name="Event" positionX="438.8671875" positionY="-73.34765625" width="128" height="165"/>
         <element name="Member" positionX="-221.4609375" positionY="88.42578125" width="128" height="163"/>
         <element name="Question" positionX="-27.25390625" positionY="535.1796875" width="128" height="210"/>
-        <element name="Response" positionX="-31.95703125" positionY="792.02734375" width="128" height="120"/>
+        <element name="Response" positionX="-31.95703125" positionY="792.02734375" width="128" height="135"/>
     </elements>
 </model>

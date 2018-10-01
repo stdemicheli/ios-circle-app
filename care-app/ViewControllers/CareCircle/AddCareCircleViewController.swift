@@ -16,13 +16,11 @@ class AddCareCircleViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var circleTypeTextField: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         guard isViewLoaded else { return }
         createPicker()
-        createPickerToolBar()
     }
     
     @IBAction func closeModal(_ sender: Any) {
@@ -75,6 +73,8 @@ extension AddCareCircleViewController: UIPickerViewDelegate, UIPickerViewDataSou
         
         // Customizations
         picker.backgroundColor = .white
+        
+        createPickerToolBar()
     }
     
     private func createPickerToolBar() {

@@ -36,6 +36,32 @@ class AssessmentController {
         }
     }
     
+    func select(_ response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            question.status = Question.StatusKeys.complete.rawValue
+            response.isSelected = !response.isSelected
+            
+            do {
+                try context.save()
+            } catch {
+                NSLog("Error saving response for response \(response): \(error)")
+            }
+        }
+    }
+    
+    func respond(with input: String, for response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            question.status = Question.StatusKeys.complete.rawValue
+            response.input = input
+            
+            do {
+                try context.save()
+            } catch {
+                NSLog("Error saving response for response \(response): \(error)")
+            }
+        }
+    }
+    
     // MARK: - Networking
     
     private func fetchAssessmentFromServer(for type: AssessmentType, context: NSManagedObjectContext) throws {
@@ -57,19 +83,6 @@ class AssessmentController {
     }
     
     // MARK: - Local
-    
-    func select(_ response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        context.performAndWait {
-            question.status = Question.StatusKeys.complete.rawValue
-            response.isSelected = !response.isSelected
-            
-            do {
-                try context.save()
-            } catch {
-                NSLog("Error saving response for response \(response): \(error)")
-            }
-        }
-    }
     
     private func fetchAssessmentFromPersistenceStore(for type: AssessmentType, context: NSManagedObjectContext) -> Assessment? {
         var assessment: Assessment? = nil

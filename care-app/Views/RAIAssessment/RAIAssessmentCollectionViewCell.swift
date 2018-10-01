@@ -15,6 +15,7 @@ protocol RAIAssessmentCollectionViewCellDelegate {
     func previous()
     func goToCell(with id: String)
     func select(_ response: Response, in cell: RAIAssessmentCollectionViewCell)
+    func respond(with input: String, for response: Response, in cell: RAIAssessmentCollectionViewCell)
 }
 
 class RAIAssessmentCollectionViewCell: UICollectionViewCell {
@@ -53,6 +54,8 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
     private var responseView: UIView!
     var responseTableView: UITableView!
     private var responseReuseIdentifier = "ResponseCell"
+    
+    private var datePicker: UIDatePicker!
     
     private var footerView: UIView!
     private var nextButton: UIButton!
@@ -97,17 +100,29 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         delegate?.select(response, in: self)
     }
     
+    @objc func respond(sender: UIDatePicker) {
+        let timestampString = String(sender.date.timeIntervalSinceReferenceDate)
+        guard let question = question, let response = question.responses?.firstObject as? Response else { return }
+        
+        delegate?.respond(with: timestampString, for: response, in: self)
+    }
+    
     // - MARK: - Private methods
     
-    func setupViews() {
+    private func setupViews() {
         setupHeaderView()
         setupFooterView()
         setupBodyView()
+        
+        switch question?.responseType {
+        case "date":
+            setupDatePicker()
+        default:
+            setupResponseTableView()
+        }
     }
     
-    func setupBodyView() {
-        
-        
+    private func setupBodyView() {
         questionView = UIView()
         let questionStackView = UIStackView()
         questionTitleTextLabel = UILabel()
@@ -115,7 +130,6 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         questionDescriptionTextLabel = UILabel()
         
         responseView = UIView()
-        responseTableView = UITableView()
         
         questionView.translatesAutoresizingMaskIntoConstraints = false
         questionStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -123,7 +137,6 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         questionSubtitleTextLabel.translatesAutoresizingMaskIntoConstraints = false
         questionDescriptionTextLabel.translatesAutoresizingMaskIntoConstraints = false
         responseView.translatesAutoresizingMaskIntoConstraints = false
-        responseTableView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(questionView)
         questionView.addSubview(questionStackView)
@@ -131,7 +144,6 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         questionStackView.addArrangedSubview(questionSubtitleTextLabel)
         questionStackView.addArrangedSubview(questionDescriptionTextLabel)
         contentView.addSubview(responseView)
-        responseView.addSubview(responseTableView)
         
         let constraints: [NSLayoutConstraint] = [
             questionView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.2),
@@ -146,10 +158,6 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
             questionStackView.leadingAnchor.constraint(equalTo: questionView.leadingAnchor, constant: 8),
             questionStackView.trailingAnchor.constraint(equalTo: questionView.trailingAnchor, constant: -8),
             questionStackView.bottomAnchor.constraint(equalTo: questionView.bottomAnchor, constant: -8),
-            responseTableView.topAnchor.constraint(equalTo: responseView.topAnchor, constant: 8),
-            responseTableView.leadingAnchor.constraint(equalTo: responseView.leadingAnchor, constant: 8),
-            responseTableView.trailingAnchor.constraint(equalTo: responseView.trailingAnchor, constant: -8),
-            responseTableView.bottomAnchor.constraint(equalTo: responseView.bottomAnchor, constant: -8),
             ]
         NSLayoutConstraint.activate(constraints)
         
@@ -176,6 +184,22 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         
         responseView.backgroundColor = .white
         
+    }
+    
+    private func setupResponseTableView() {
+        
+        responseTableView = UITableView()
+        responseTableView.translatesAutoresizingMaskIntoConstraints = false
+        responseView.addSubview(responseTableView)
+        
+        let constraints: [NSLayoutConstraint] = [
+            responseTableView.topAnchor.constraint(equalTo: responseView.topAnchor, constant: 8),
+            responseTableView.leadingAnchor.constraint(equalTo: responseView.leadingAnchor, constant: 8),
+            responseTableView.trailingAnchor.constraint(equalTo: responseView.trailingAnchor, constant: -8),
+            responseTableView.bottomAnchor.constraint(equalTo: responseView.bottomAnchor, constant: -8),
+            ]
+        NSLayoutConstraint.activate(constraints)
+        
         responseTableView.register(ResponseTableViewCell.self, forCellReuseIdentifier: responseReuseIdentifier)
         responseTableView.delegate = self
         responseTableView.dataSource = self
@@ -184,7 +208,46 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setupHeaderView() {
+    private func setupDatePicker() {
+        datePicker = UIDatePicker()
+        let responseTitleLabel = UILabel()
+        
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        responseTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        responseView.addSubview(datePicker)
+        datePicker.addSubview(responseTitleLabel)
+        
+        let constraints: [NSLayoutConstraint] = [
+            datePicker.topAnchor.constraint(equalTo: responseView.topAnchor, constant: 8),
+            datePicker.leadingAnchor.constraint(equalTo: responseView.leadingAnchor, constant: 8),
+            datePicker.trailingAnchor.constraint(equalTo: responseView.trailingAnchor, constant: -8),
+            datePicker.bottomAnchor.constraint(equalTo: responseView.bottomAnchor, constant: -8),
+            responseTitleLabel.topAnchor.constraint(equalTo: datePicker.topAnchor, constant: 8),
+            responseTitleLabel.leadingAnchor.constraint(equalTo: datePicker.leadingAnchor, constant: 8),
+            responseTitleLabel.trailingAnchor.constraint(equalTo: datePicker.trailingAnchor, constant: -8),
+            ]
+        NSLayoutConstraint.activate(constraints)
+        
+        let response = question?.responses?.firstObject as? Response
+        
+        datePicker.addTarget(self, action: #selector(respond(sender:)), for: .valueChanged)
+        datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
+        if let savedDateString = response?.input {
+            guard let savedDateDouble = Double(savedDateString),
+                let timeInterval = TimeInterval(exactly: savedDateDouble) else { return }
+            let savedDate = Date(timeIntervalSinceReferenceDate: timeInterval)
+            datePicker.setDate(savedDate, animated: true)
+        }
+        
+        responseTitleLabel.text = response?.title
+        responseTitleLabel.textAlignment = .center
+        responseTitleLabel.numberOfLines = 0
+        responseTitleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+    }
+    
+    private func setupHeaderView() {
         headerView = UIView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(headerView)
@@ -240,7 +303,7 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func setupFooterView() {
+    private func setupFooterView() {
         footerView = UIView()
         footerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(footerView)
