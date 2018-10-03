@@ -12,7 +12,6 @@ import CoreData
 class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCollectionViewCellDelegate {
     
     // MARK: - Properties
-    
     let assessmentController = AssessmentController()
     private let reuseIdentifier = "RAIAssessmentCell"
     private var cellSize: CGSize!
@@ -45,6 +44,9 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         
         self.cellSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
         
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         if frc.fetchedObjects?.count == 0 {
             assessmentController.fetchAssessment(for: AssessmentType.raiHC) { (error) in
                 if let error = error {
@@ -55,6 +57,23 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         }
     }
     
+//    @objc func keyboardWillShow(notification: NSNotification) {
+//
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y >= 0 {
+//                self.view.frame.origin.y -= 50
+//            }
+//        }
+//    }
+//
+//    @objc func keyboardWillHide(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            if self.view.frame.origin.y != 0 {
+//                self.view.frame.origin.y += 50
+//            }
+//        }
+//    }
+    
     deinit {
         for operation: BlockOperation in blockOperations {
             operation.cancel()
@@ -63,7 +82,7 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         blockOperations.removeAll(keepingCapacity: false)
     }
     
-    // MARK: RAIAssessmentCollectionViewCellProtocol
+    // MARK: - RAIAssessmentCollectionViewCellProtocol
     
     func openMenu() {
         guard let questions = frc.fetchedObjects else { return }
@@ -109,6 +128,13 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         }
     }
     
+    func selectUnique(_ response: Response, in cell: RAIAssessmentCollectionViewCell) {
+        if let question = cell.question {
+            assessmentController.selectUnique(response, in: question)
+            next()
+        }
+    }
+    
     func respond(with input: String, for response: Response, in cell: RAIAssessmentCollectionViewCell) {
         if let question = cell.question {
             assessmentController.respond(with: input, for: response, in: question)
@@ -124,8 +150,7 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         return nil
     }
     
-    
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return frc.fetchedObjects?.count ?? 0
@@ -144,8 +169,8 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.red : UIColor.green
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
+    
+    // MARK: - UICollectionViewDelegate
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -183,13 +208,13 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
 extension RAIHCCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        return self.cellSize
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
 }
 
 // MARK: - NSFetchedResultsControllerDelegate

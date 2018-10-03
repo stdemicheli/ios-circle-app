@@ -15,6 +15,7 @@ protocol RAIAssessmentCollectionViewCellDelegate {
     func previous()
     func goToCell(with id: String)
     func select(_ response: Response, in cell: RAIAssessmentCollectionViewCell)
+    func selectUnique(_ response: Response, in cell: RAIAssessmentCollectionViewCell)
     func respond(with input: String, for response: Response, in cell: RAIAssessmentCollectionViewCell)
 }
 
@@ -96,8 +97,12 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         delegate?.previous()
     }
     
-    @objc func selectA(_ response: Response) {
+    func selectResponse(with response: Response) {
         delegate?.select(response, in: self)
+    }
+    
+    func selectUniqueResponse(with response: Response) {
+        delegate?.selectUnique(response, in: self)
     }
     
     @objc func respond(sender: UIDatePicker) {
@@ -116,9 +121,16 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         
         switch question?.responseType {
         case "date":
-            setupDatePicker()
+            setupDatePickerResponseView()
+        case "open":
+            guard let responses = Array(question?.responses ?? []) as? [Response] else { fallthrough }
+            for response in responses {
+                if let title = response.title {
+                    setupOpenResponseView(with: title)
+                }
+            }
         default:
-            setupResponseTableView()
+            setupTableViewResponseView()
         }
     }
     
@@ -186,7 +198,7 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func setupResponseTableView() {
+    private func setupTableViewResponseView() {
         
         responseTableView = UITableView()
         responseTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -208,7 +220,7 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         
     }
     
-    private func setupDatePicker() {
+    private func setupDatePickerResponseView() {
         datePicker = UIDatePicker()
         let responseTitleLabel = UILabel()
         
@@ -242,6 +254,41 @@ class RAIAssessmentCollectionViewCell: UICollectionViewCell {
         }
         
         responseTitleLabel.text = response?.title
+        responseTitleLabel.textAlignment = .center
+        responseTitleLabel.numberOfLines = 0
+        responseTitleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
+    }
+    
+    private func setupOpenResponseView(with title: String) {
+        let responseTextView = UITextView()
+        let responseTitleLabel = UILabel()
+        
+        responseTextView.translatesAutoresizingMaskIntoConstraints = false
+        responseTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        responseView.addSubview(responseTextView)
+        responseView.addSubview(responseTitleLabel)
+        
+        let constraints: [NSLayoutConstraint] = [
+            responseTextView.topAnchor.constraint(equalTo: responseTitleLabel.bottomAnchor, constant: 16),
+            responseTextView.leadingAnchor.constraint(equalTo: responseView.leadingAnchor, constant: 16),
+            responseTextView.trailingAnchor.constraint(equalTo: responseView.trailingAnchor, constant: -16),
+            responseTextView.bottomAnchor.constraint(equalTo: responseView.bottomAnchor, constant: -16),
+            responseTitleLabel.topAnchor.constraint(equalTo: responseView.topAnchor, constant: 8),
+            responseTitleLabel.leadingAnchor.constraint(equalTo: responseView.leadingAnchor, constant: 8),
+            responseTitleLabel.trailingAnchor.constraint(equalTo: responseView.trailingAnchor, constant: -8),
+            ]
+        NSLayoutConstraint.activate(constraints)
+        
+        responseTextView.delegate = self
+        responseTextView.layer.borderWidth = 2.0
+        responseTextView.layer.borderColor = UIColor.gray.withAlphaComponent(0.3).cgColor
+        responseTextView.layer.cornerRadius = 5
+        responseTextView.clipsToBounds = true
+        responseTextView.font = UIFont.systemFont(ofSize: 16.0)
+        responseTextView.returnKeyType = .done
+        
+        responseTitleLabel.text = title
         responseTitleLabel.textAlignment = .center
         responseTitleLabel.numberOfLines = 0
         responseTitleLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
@@ -377,9 +424,33 @@ extension RAIAssessmentCollectionViewCell: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let response = responses?[indexPath.row] as? Response {
-            selectA(response)
+        if let response = responses?[indexPath.row] as? Response, let question = self.question {
+            if question.responseType == "multi-option" {
+                selectResponse(with: response)
+            } else if question.responseType == "ordinal-scale" || question.responseType == "boolean" {
+                selectUniqueResponse(with: response)
+            } else {
+                selectResponse(with: response)
+            }
         }
     }
+    
+}
+
+extension RAIAssessmentCollectionViewCell: UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print("ended with: \(textView.text)")
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            
+        }
+        return true
+    }
+    
     
 }

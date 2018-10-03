@@ -38,27 +38,32 @@ class AssessmentController {
     
     func select(_ response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
-            question.status = Question.StatusKeys.complete.rawValue
+            // TODO: set question.status to incomplete if no response selected (e.g. when deselected)
             response.isSelected = !response.isSelected
-            
-            do {
-                try context.save()
-            } catch {
-                NSLog("Error saving response for response \(response): \(error)")
+            question.status = Question.StatusKeys.complete.rawValue
+            saveToPersistence(with: context)
+        }
+    }
+    
+    func selectUnique(_ response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        context.performAndWait {
+            if let responses = question.responses {
+                for item in responses {
+                    guard let response = item as? Response else { continue }
+                    response.isSelected = false
+                }
             }
+            response.isSelected = !response.isSelected
+            question.status = Question.StatusKeys.complete.rawValue
+            saveToPersistence(with: context)
         }
     }
     
     func respond(with input: String, for response: Response, in question: Question, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         context.performAndWait {
-            question.status = Question.StatusKeys.complete.rawValue
             response.input = input
-            
-            do {
-                try context.save()
-            } catch {
-                NSLog("Error saving response for response \(response): \(error)")
-            }
+            question.status = Question.StatusKeys.complete.rawValue
+            saveToPersistence(with: context)
         }
     }
     
@@ -83,6 +88,14 @@ class AssessmentController {
     }
     
     // MARK: - Local
+    
+    private func saveToPersistence(with context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        do {
+            try context.save()
+        } catch {
+            NSLog("Error saving object to persistence: \(error)")
+        }
+    }
     
     private func fetchAssessmentFromPersistenceStore(for type: AssessmentType, context: NSManagedObjectContext) -> Assessment? {
         var assessment: Assessment? = nil
