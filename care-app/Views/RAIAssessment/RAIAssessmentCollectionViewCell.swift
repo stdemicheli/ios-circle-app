@@ -439,9 +439,9 @@ extension RAIAssessmentCollectionViewCell: UITableViewDelegate, UITableViewDataS
 
 extension RAIAssessmentCollectionViewCell: UITextViewDelegate {
     
+    // TODO: Build out if a open text view response option is included in assessment
     func textViewDidEndEditing(_ textView: UITextView) {
-        print("ended with: \(textView.text)")
-        
+        print("ended with: \(String(describing: textView.text))")
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

@@ -3,6 +3,7 @@
     <entity name="Assessment" representedClassName="Assessment" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="member" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Member" inverseName="assessments" inverseEntity="Member" syncable="YES"/>
         <relationship name="questions" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Question" inverseName="assessment" inverseEntity="Question" syncable="YES"/>
@@ -56,7 +57,7 @@
         <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="responses" inverseEntity="Question" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Assessment" positionX="-31.375" positionY="377.5703125" width="128" height="120"/>
+        <element name="Assessment" positionX="-31.375" positionY="377.5703125" width="128" height="135"/>
         <element name="CareCircle" positionX="28.2734375" positionY="-97.94921875" width="128" height="120"/>
         <element name="Event" positionX="438.8671875" positionY="-73.34765625" width="128" height="165"/>
         <element name="Member" positionX="-221.4609375" positionY="88.42578125" width="128" height="163"/>

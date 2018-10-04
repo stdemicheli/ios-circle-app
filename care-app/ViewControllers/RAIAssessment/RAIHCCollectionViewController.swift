@@ -47,12 +47,10 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        if frc.fetchedObjects?.count == 0 {
-            assessmentController.fetchAssessment(for: AssessmentType.raiHC) { (error) in
-                if let error = error {
-                    NSLog("Error fetching RAI HC Assessment: \(error)")
-                    return
-                }
+        assessmentController.fetchAssessment(for: AssessmentType.raiHC.rawValue) { (error) in
+            if let error = error {
+                NSLog("Error fetching RAI HC Assessment: \(error)")
+                return
             }
         }
     }
@@ -135,9 +133,9 @@ class RAIHCCollectionViewController: UICollectionViewController, RAIAssessmentCo
         }
     }
     
-    func respond(with input: String, for response: Response, in cell: RAIAssessmentCollectionViewCell) {
+    func respond(with text: String, for response: Response, in cell: RAIAssessmentCollectionViewCell) {
         if let question = cell.question {
-            assessmentController.respond(with: input, for: response, in: question)
+            assessmentController.respond(with: text, for: response, in: question)
         }
     }
     

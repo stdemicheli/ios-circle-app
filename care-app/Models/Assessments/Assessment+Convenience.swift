@@ -10,11 +10,19 @@ import CoreData
 
 extension Assessment {
     
-    convenience init(id: String, name: String, type: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    enum StatusKeys: String {
+        case open
+        case complete
+        case inProgress
+    }
+    
+    convenience init(id: String, name: String, type: String, status: String = Assessment.StatusKeys.inProgress.rawValue, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.id = id
         self.name = name
         self.type = type
+        // TODO: Evaluate if it status should be set to "inProgress" upon initialization
+        self.status = status
     }
     
     convenience init?(_ assessmentRepresentation: AssessmentRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
